@@ -23,4 +23,4 @@ async function fetchNowPlaying() {
 fetchNowPlaying();
 
 // Update every minute (you can adjust the interval as needed)
-setInterval(fetchNowPlaying, 100);
+setInterval(fetchNowPlaying, 2000);
