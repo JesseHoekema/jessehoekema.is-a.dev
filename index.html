@@ -1,15 +1,17 @@
 <!--
-     _                      _   _            _                        
-    | | ___  ___ ___  ___  | | | | ___   ___| | _____ _ __ ___   __ _ 
- _  | |/ _ \/ __/ __|/ _ \ | |_| |/ _ \ / _ \ |/ / _ \ '_ ` _ \ / _` |
-| |_| |  __/\__ \__ \  __/ |  _  | (_) |  __/   <  __/ | | | | | (_| |
- \___/ \___||___/___/\___| |_| |_|\___/ \___|_|\_\___|_| |_| |_|\__,_|
+       _   _    _ 
+      | | | |  | |
+      | | | |__| |
+  _   | | |  __  |
+ | |__| | | |  | |
+  \____/  |_|  |_|
+                  
                   
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <!-- Google tag (gtag.js) -->
+         <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y1FLSPCGE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,17 +20,20 @@
 
   gtag('config', 'G-3Y1FLSPCGE');
 </script>
-    <link rel="shortcut icon" href="jessehoekema-logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.3.45/css/materialdesignicons.min.css">
     <meta charset="UTF-8">
-    <meta name="description" content="Hello I Am Jesse Hoekema And This Is My Official Website Take A Look And Discover Who I Am And What I Can Do">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jesse Hoekema</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="shortcut icon" href="jessehoekema-logo.jpg" type="image/x-icon">
+
     <style>
         body {
             margin: 0;
             background: linear-gradient(90deg, #ffb347 0%, #ffcc66 100%);
         }
+
         .box_playing {
             border: 2px solid;
             display: flex;
@@ -44,26 +49,74 @@
             padding-left: 10px;
             font-size: 20px;
         }
+        .footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: lightgreen;
+   color: white;
+   text-align: center;
+}
+
+        .social-bar {
+            padding-left: 10px;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .social-bar li {
+            padding-top: 35px;
+            margin-right: 15px;
+        }
+
+        .social-bar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-bar a:hover {
+            color: #007bff;
+        }
+        .sticky-header {
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.header-space {
+    padding-bottom: 50px;
+    width: 100%;
+}
     </style>
 </head>
 <body>
 <div id="home" class="name-info">
-    <nav class="fade-in-text" id="navbar">
-        <ul>
-          <li>
-            <a href="#home" class="scroll-link" >Home</a>
-          </li>
-          <li>
-            <a href="#about-me" class="scroll-link">About</a>
-          </li>
-          <li>
-            <a href="#projects" class="scroll-link">Projects</a>
-          </li>
-          <li>
-            <a href="#ci" class="scroll-link">Contact</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="header-space">
+        <header class="sticky-header">
+            <nav class="fade-in-text" id="navbar">
+                <ul>
+                  <li>
+                    <a href="#home" class="scroll-link" >Home</a>
+                  </li>
+                  <li>
+                    <a href="#about-me" class="scroll-link">About</a>
+                  </li>
+                  <li>
+                    <a href="#projects" class="scroll-link">Projects</a>
+                  </li>
+                  <li>
+                    <a href="#ci" class="scroll-link">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+    </header>
+  </div>
     <h6 class="fade-in-text">Hello I Am<br><h5 class="fade-in-text">Jesse Hoekema</h5></h6>
     <iframe 
     class="fade-in-text"
@@ -81,26 +134,27 @@
         <center> 
             <div id="about" class="box-am">
                 <h1>About Me</h1>
-               <p>
+                <p>
                     Hello, I am Jesse Hoekema. I am an experienced developer.<br>
                     My Skils Are<br>
-                    <object data="https://skillicons.dev/icons?i=html,css,js,react,figma,arduino,bash,blender,raspberrypi" type="text/html" width="50%" height="50px" ></object><br>
+                    <object data="https://skillicons.dev/icons?i=html,css,js,react,figma,arduino,bash,blender,raspberrypi,robloxstudio" type="text/html" width="50%" height="50px" ></object><br>
                     And I Use<br>
                     <object data="https://skillicons.dev/icons?i=vscode,docker,github,cloudflare,firebase" type="text/html" width="30%" height="50px" ></object><br>
                     To Build My Projects<br>
                     I have worked on numerous projects, including the personal site, ASCII-OS, JHOS, and much more.<br>
                     My biggest project was the personal site, created using HTML, CSS, JS, and Firebase.<br>
                 </p>
+                
             </div>
         </center>
     </div>
     <div id="projects" class="projects">
         <center>
-            <h1 class="ptt" href="https://github.com/JesseHoekema?tab=repositories">Projects</h1>
+            <h1 class="ptt">Projects</h1>
             <center>
             <div class="flexbox">
                 <div class="project">
-                    <div class="project-in" onclick="window.location.href='https://github.com/JesseHoekema/tps';">
+                    <div class="project-in">
                         <h4>&nbsp;</h4>
                         <h1>The Personal Site</h1>
                         <p>
@@ -115,7 +169,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project-in" onclick="window.location.href='https://github.com/JesseHoekema/JHOS3';">
+                    <div class="project-in">
                         <h4>&nbsp;</h4>
                         <h1>JHOS</h1>
                         <p>
@@ -128,7 +182,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project-in" onclick="window.location.href='https://www.koeienbescherming.nl/';">
+                    <div class="project-in">
                         <h4>&nbsp;</h4>
                         <h1>Koeien<br>Bescherming</h1>
                         <p>
@@ -142,7 +196,7 @@
             </center>
             <div class="flexbox">
                 <div class="project">
-                    <div class="project-in" onclick="window.location.href='https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn';">
+                    <div class="project-in">
                         <h4>&nbsp;</h4>
                         <h1>JHBROWSER</h1>
                         <p>
@@ -150,11 +204,12 @@
                             Its Not Done<br>
                             Only The Extension<br>
                             The Extension You Can Find And Install It <a href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn">here</a><br>  
+                        
                         </p>
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project-in" onclick="window.location.href='https://github.com/JesseHoekema/ascii-os';">
+                    <div class="project-in">
                         <h4>&nbsp;</h4>
                         <h1>ASCII OS</h1>
                         <p>
@@ -167,7 +222,7 @@
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project-in" onclick="window.location.href='https://zeno.fm/radio/jhradio/';">
+                    <div class="project-in">
                         <h4>&nbsp;</h4>
                         <h1>JHRADIO</h1>
                         <p>
@@ -181,7 +236,7 @@
             </div>
             <div class="flexbox" style="justify-content: center; align-items: center; text-align: center;">
                 <div class="more">
-                    <a class="view-more" href="test.html">More</a>
+                    <a class="view-more" class="page-transition-link" href="test.html">More</a>
                 </div>
             </div>
         </center>
@@ -199,19 +254,35 @@
                 <h1>Contact</h1>
                 <p>
                     Email: <a href="mailto:jessehoekemav.y@gmail.com">jessehoekemav.y@gmail.com</a><br>
-                    Phone: <a href="https://youareanidiot.cc/safe/">Not Saying</a><br>
+                    Phone: <a>Not Saying</a><br>
                     Github: <a href="https://github.com/JesseHoekema">JesseHoekema</a><br>
-                    Discord: <a href="https://discordapp.com/users/996645651729354785/">jessie-het-flessie#1672</a><br>
-                    Instagram: <a href="https://www.instagram.com/jesse_hoekema/">@Jesse_hoekema</a><br>
-                    Facebook: <a href="https://www.facebook.com/people/Jessie-Het-Flessie/pfbid0zwuTxigknT9NAE5ZQiWvpTnT8rbFMGp2CALwThTDgeyyummZ4whutDZjZFaqQndkl/">Jessie-Het-Flessie</a><br>
-                    Dev.to: <a href="https://dev.to/jessehoekema/">@jessehoekema</a><br>
+                    Instagram: <a href="https://www.instagram.com/jesse_hoekema/">@Jesse_hoemema</a><br>
+                    Dev.to: <a href="https://dev.to/jessehoekema/">@jessehoekema</a><br>   
                 </p>
             </div>
         </div>
     </center>
 </footer>
 </div>
+</div>
+<script>
+          document.addEventListener('DOMContentLoaded', function () {
+  var header = document.querySelector('.sticky-header');
+  var headerHeight = header.clientHeight;
+
+  window.addEventListener('scroll', function () {
+    var scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > headerHeight) {
+      header.classList.add('fixed');
+    } else {
+      header.classList.remove('fixed');
+    }
+  });
+});
+</script>
 <script src="scroll.js"></script>
 <script src="spotify.js"></script>
+<script src="none.js"></script>
 </body>
 </html>
