@@ -8,14 +8,6 @@ body {
     scroll-behavior: smooth; /* Voegt soepele scroll-effecten toe */
 }
 
-iframe {
-    transition: transform 0.55s ease-in-out;
-}
-
-iframe:hover {
-    transform: scale(1.1);
-}
-
 h1 {
     transition: color 0.55s ease-in-out;
 }
