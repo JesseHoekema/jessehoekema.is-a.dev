@@ -16,18 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 document.addEventListener('DOMContentLoaded', function () {
-    var navbar = document.getElementById('navbar');
-    var offsetTop = navbar.offsetTop;
-
-    window.onscroll = function () {
-        if (window.pageYOffset >= offsetTop) {
-            navbar.classList.add('fixed');
-        } else {
-            navbar.classList.remove('fixed');
-        }
-    };
-});
-document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('.section');
 
     function isInViewport(element) {
