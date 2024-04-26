@@ -1,11 +1,40 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
  <head>
    <title>Redirecting You To The Destination</title>
    <link rel="shortcut icon" href="jessehoekema-logo.jpg" type="image/x-icon">
    <meta http-equiv="refresh" content="0; url=projects.html">
+   <style>
+    @import url(https://fonts.googleapis.com/css?family=Lato);
+    body {
+        background: linear-gradient(90deg, #ffb347 0%, #ffcc66 100%);
+        font-family: "Lato", sans-serif;
+        font-weight: 900;
+    }
+    .centered {
+        width: 600px; /* Breedte van je div */
+        height: 200px; /* Hoogte van je div */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: fit-content;
+        align-items: center;
+        text-align: center;
+    }
+    img {
+        width: 200px;
+    }
+    a {
+        color: black;
+    }
+   </style>
  </head>
   <body>
-    <h1>Redirecting You To The Destination</h1>
+    <div class="centered">
+        <img src="share.png">
+        <h1>Redirecting You To The Destination</h1>
+        <a href="projects.html">Not Working? Click Here!</a>
+    </div>
   </body>
 </html>
