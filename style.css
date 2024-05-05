@@ -274,6 +274,6 @@ iframe {
 }
 
 ::-webkit-scrollbar {
-    background-color: transperrent;
-    width: 5px;
+    background: linear-gradient(90deg, #ffb347 0%, #ffcc66 100%);
+    width: 8px;
 }
