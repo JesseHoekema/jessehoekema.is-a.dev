@@ -268,3 +268,12 @@ iframe {
     padding-top: 35px;
     padding-left: 6px;
 }
+::-webkit-scrollbar-thumb {
+    background-color: #434D6F;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar {
+    background-color: #000010;
+    width: 5px;
+}
