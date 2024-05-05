@@ -269,11 +269,11 @@ iframe {
     padding-left: 6px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #434D6F;
+    background-color: #ffcc66;
     border-radius: 30px;
 }
 
 ::-webkit-scrollbar {
-    background-color: #FFC25A;
-    width: 8px;
+    background-color: #d19d3d;
+    width: 9px;
 }
