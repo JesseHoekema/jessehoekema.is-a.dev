@@ -1,20 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var scrollLinks = document.querySelectorAll('.scroll-link');
 
-    scrollLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            var targetId = this.getAttribute('href').substring(1);
-            var targetElement = document.getElementById(targetId);
-
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
-        });
-    });
-});
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('.section');
 
