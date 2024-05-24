@@ -1,0 +1,26 @@
+.dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: grey; /* Default to offline */
+}
+
+.dot.online {
+    background-color: green;
+    color: green;
+}
+
+.dot.idle {
+    background-color: yellow;
+    color: yellow;
+}
+
+.dot.dnd {
+    background-color: red;
+    color: red;
+}
+
+.dot.offline {
+    background-color: grey;
+    color: grey;
+}
