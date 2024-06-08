@@ -35,7 +35,6 @@ h6 {
   margin-bottom: 0px;
   padding-left: 10px;
   transition: color 0.55s ease-in-out;
-  text-shadow: 0 0 10px rgba(0, 0, 0.2, 0.3);
 }
 h5 {
   font-size: 87px;
@@ -46,7 +45,6 @@ h5 {
   color: #2c3e50;
   margin-bottom: 0px;
   transition: color 0.55s ease-in-out;
-  text-shadow: 0 0 10px rgba(0, 0, 0.2, 0.3);
 }
 h5:hover {
   color: orangered;
