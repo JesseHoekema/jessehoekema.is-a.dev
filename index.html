@@ -412,7 +412,7 @@
             }
             return response.text(); // Of response.json() als je server JSON terugstuurt
           })
-          .then(result => alert('Server antwoord: ' + result))
+          .then(result => console.log('Server antwoord: ' + result))
           .catch(error => console.error('Fout:', error));
         });
         document.getElementById('contact-form2').addEventListener('submit', function(event) {
@@ -446,7 +446,7 @@
             }
             return response.text(); // Of response.json() als je server JSON terugstuurt
           })
-          .then(result => alert('Server antwoord: ' + result))
+          .then(result => console.log('Server antwoord: ' + result))
           .catch(error => console.error('Fout:', error));
         });
       </script>
