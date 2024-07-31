@@ -18,6 +18,68 @@
 
         gtag('config', 'G-3Y1FLSPCGE');
     </script>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 100%;
+        }
+        form input {
+            background: transparent;
+            border: 1px solid;
+            border-radius: 15px;
+            padding: 10px;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        form #message {
+            background: transparent;
+            border: 1px solid;
+            border-radius: 15px;
+            padding: 10px;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+            height: 100px;
+            font-family: Arial, sans-serif;
+            resize: vertical ; /* Allows users to resize the textarea vertically */
+        }
+        form #message2 {
+            background: transparent;
+            border: 1px solid;
+            border-radius: 15px;
+            padding: 10px;
+            outline: none;
+            width: 100%;
+            box-sizing: border-box;
+            height: 100px;
+            font-family: Arial, sans-serif;
+            resize: vertical ; /* Allows users to resize the textarea vertically */
+        }
+        form button {
+            position: relative;
+            background: #f4a433;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            overflow: hidden;
+            transition: transform 0.7s ease;
+        }
+        form button:hover {
+            transform: scale(1.02);
+        }
+        label {
+            font-weight: 500;
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <div class="desktop">
@@ -179,16 +241,19 @@
     <!-- Begin Contact-->
     <div id="contact" class="contact fade-in-text">
         <div id="ci" class="contact-info">
-            <h1>Contact</h1>
-             <p>
-                Email: <a href="mailto:me@jessehoekema.com" rel="noopener noreferrer" target="_blank">me@jessehoekema.com</a><br>
-                Discord: <a href="discordapp.com/users/996645651729354785" rel="noopener noreferrer" target="_blank">jessiflessi#1672</a><br>
-                Instagram: <a href="https://www.instagram.com/jesse_hoekema/" rel="noopener noreferrer" target="_blank">@Jesse_hoemema</a><br>
-                Facebook: <a href="https://www.facebook.com/people/Jessie-Het-Flessie/pfbid021DCVuSkD9tYba6ByhgwcCBwYVAZiyQDwz5qx9xJekCbgQRzrv2q5RhdMaxqpPgBvl/" rel="noopener noreferrer" target="_blank">Jessie-Het-Flessie</a><br>
-                Github: <a href="https://github.com/JesseHoekema" rel="noopener noreferrer" target="_blank">JesseHoekema</a><br>
-                Tiktok: <a href="https://www.tiktok.com/@vermepls" rel="noopener noreferrer" target="_blank">@vermepls</a><br>
-                Dev.to: <a href="https://dev.to/jessehoekema/" rel="noopener noreferrer" target="_blank">@jessehoekema</a><br>   
-            </p>
+            <form id="contact-form">
+                <h1>Contact</h1>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Name">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email">
+                
+                <label for="message">Message For Me</label>
+                <textarea id="message" placeholder="Leave A Message"></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
         </div>
     </div>
     <!-- End Contact-->
@@ -267,16 +332,19 @@
     <!-- Contact Section -->
     <div id="mobilecontact" class="section" style="background-color: #c0c0c0;">
         <div class="content-box" id="contactbox">
-            <h1>Contact</h1>
-             <p>
-                Email: <a href="mailto:me@jessehoekema.com" rel="noopener noreferrer" target="_blank">me@jessehoekema.com</a><br>
-                Discord: <a href="discordapp.com/users/996645651729354785" rel="noopener noreferrer" target="_blank">jessiflessi#1672</a><br>
-                Instagram: <a href="https://www.instagram.com/jesse_hoekema/" rel="noopener noreferrer" target="_blank">@Jesse_hoemema</a><br>
-                Facebook: <a href="https://www.facebook.com/people/Jessie-Het-Flessie/pfbid021DCVuSkD9tYba6ByhgwcCBwYVAZiyQDwz5qx9xJekCbgQRzrv2q5RhdMaxqpPgBvl/" rel="noopener noreferrer" target="_blank">Jessie-Het-Flessie</a><br>
-                Github: <a href="https://github.com/JesseHoekema" rel="noopener noreferrer" target="_blank">JesseHoekema</a><br>
-                Tiktok: <a href="https://www.tiktok.com/@vermepls" rel="noopener noreferrer" target="_blank">@vermepls</a><br>
-                Dev.to: <a href="https://dev.to/jessehoekema/" rel="noopener noreferrer" target="_blank">@jessehoekema</a><br>   
-            </p>
+            <form id="contact-form2">
+                <h1>Contact</h1>
+                <label for="name">Name</label>
+                <input type="text" id="name2" placeholder="Name" name="name">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email2" placeholder="Email" name="email">
+                
+                <label for="message">Message For Me</label>
+                <textarea id="message2" placeholder="Leave A Message"></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
         </div>
     </div>
 
@@ -312,5 +380,75 @@
     <script src="scripts/mobile.js"></script>
     <script src="scripts/discordmobile.js"></script>
     <script src="scripts/script.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Voorkom de standaard formulierverzending
+    
+          // Verkrijg de waarden van de formulierinvoervelden
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+    
+          // Zet de gegevens om naar een object
+          const data = {
+            name: name,        // Verkrijg waarde van het invoerveld met id 'name'
+            email: email,      // Verkrijg waarde van het invoerveld met id 'email'
+            message: message   // Verkrijg waarde van het invoerveld met id 'message'
+          };
+    
+          console.log('Formuliergegevens:', data);
+    
+          // Optioneel: Verstuur de gegevens naar een server
+          fetch('http://localhost:3000/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Netwerkreactie was niet ok.');
+            }
+            return response.text(); // Of response.json() als je server JSON terugstuurt
+          })
+          .then(result => alert('Server antwoord: ' + result))
+          .catch(error => console.error('Fout:', error));
+        });
+        document.getElementById('contact-form2').addEventListener('submit', function(event) {
+          event.preventDefault(); // Voorkom de standaard formulierverzending
+    
+          // Verkrijg de waarden van de formulierinvoervelden
+          const name2 = document.getElementById('name2').value;
+          const email2 = document.getElementById('email2').value;
+          const message2 = document.getElementById('message2').value;
+    
+          // Zet de gegevens om naar een object
+          const data = {
+            name: name2,        // Verkrijg waarde van het invoerveld met id 'name'
+            email: email2,      // Verkrijg waarde van het invoerveld met id 'email'
+            message: message2   // Verkrijg waarde van het invoerveld met id 'message'
+          };
+    
+          console.log('Formuliergegevens:', data);
+    
+          // Optioneel: Verstuur de gegevens naar een server
+          fetch('http://localhost:3000/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Netwerkreactie was niet ok.');
+            }
+            return response.text(); // Of response.json() als je server JSON terugstuurt
+          })
+          .then(result => alert('Server antwoord: ' + result))
+          .catch(error => console.error('Fout:', error));
+        });
+      </script>
 </body>
 </html>
