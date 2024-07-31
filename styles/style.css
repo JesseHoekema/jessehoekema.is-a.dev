@@ -198,12 +198,12 @@ nav.fixed {
   background: linear-gradient(90deg, #ffb347 0%, #ffcc66 100%);
 }
 .contact-info {
-  box-shadow: 0 0 10px rgba(0, 0, 0.2, 0.5);
-  background-color: white;
-  padding: 10px;
-  width: 500px;
+  width: 40%;
   border-radius: 10px;
   transition: transform 0.55s ease-in-out;
+  background-color: white;
+  width: 450px;
+  padding: 10px;
 }
 .contact-info:hover {
   transform: scale(1.1);
@@ -296,7 +296,7 @@ iframe {
     padding: 0;
     background: linear-gradient(90deg, #ffb347 0%, #ffcc66 100%);
     font-family: "Lato", sans-serif;
-}
+  }
 
 .section {
     background: linear-gradient(90deg, #ffb347 0%, #ffcc66 100%);
@@ -391,5 +391,11 @@ iframe {
 ::-webkit-scrollbar {
   background-color: #ffcc66;
   width: 9px;
+}
+#contactbox {
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  max-width: 80%;
 }
 }
