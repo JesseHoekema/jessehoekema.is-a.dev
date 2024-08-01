@@ -252,6 +252,8 @@
                 <label for="message">Message For Me</label>
                 <textarea id="message" placeholder="Leave A Message"></textarea>
                 
+                <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
+                
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -342,6 +344,8 @@
                 
                 <label for="message">Message For Me</label>
                 <textarea id="message2" placeholder="Leave A Message"></textarea>
+
+                <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
                 
                 <button type="submit">Send</button>
             </form>
@@ -388,6 +392,7 @@
           const name = document.getElementById('name').value;
           const email = document.getElementById('email').value;
           const message = document.getElementById('message').value;
+          const sendconfirm = document.getElementById('sendconfirm');
     
           // Zet de gegevens om naar een object
           const data = {
@@ -412,7 +417,14 @@
             }
             return response.text(); // Of response.json() als je server JSON terugstuurt
           })
-          .then(result => console.log('Server antwoord: ' + result))
+            .then(result => {
+                // Controleer of de server aangeeft dat de actie succesvol was
+                if (result.success === true) {
+                  sendconfirm.style.display = "block"
+                } else {
+                    alert("Error sending message")
+                }
+            })
           .catch(error => console.error('Fout:', error));
         });
         document.getElementById('contact-form2').addEventListener('submit', function(event) {
