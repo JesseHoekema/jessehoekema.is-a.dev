@@ -427,7 +427,7 @@
           const name2 = document.getElementById('name2').value;
           const email2 = document.getElementById('email2').value;
           const message2 = document.getElementById('message2').value;
-            const sendconfirm = document.getElementById('sendconfirm2');
+            const sendconfirm2 = document.getElementById('sendconfirm2');
     
           // Zet de gegevens om naar een object
           const data = {
@@ -450,7 +450,7 @@
             if (!response.ok) {
               throw new Error('Netwerkreactie was niet ok.');
             }
-              sendconfirm.style.display = "block"
+              sendconfirm2.style.display = "block"
             return response.text(); // Of response.json() als je server JSON terugstuurt
           })
           .then(result => console.log('Server antwoord: ' + result))
