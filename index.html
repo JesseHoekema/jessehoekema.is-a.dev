@@ -415,16 +415,9 @@
             if (!response.ok) {
               throw new Error('Netwerkreactie was niet ok.');
             }
+              sendconfirm.style.display = "block"
             return response.text(); // Of response.json() als je server JSON terugstuurt
           })
-            .then(result => {
-                // Controleer of de server aangeeft dat de actie succesvol was
-                if (result.success === true) {
-                  sendconfirm.style.display = "block"
-                } else {
-                    alert("Error sending message")
-                }
-            })
           .catch(error => console.error('Fout:', error));
         });
         document.getElementById('contact-form2').addEventListener('submit', function(event) {
