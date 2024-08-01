@@ -449,6 +449,7 @@
             if (!response.ok) {
               throw new Error('Netwerkreactie was niet ok.');
             }
+              sendconfirm.style.display = "block"
             return response.text(); // Of response.json() als je server JSON terugstuurt
           })
           .then(result => console.log('Server antwoord: ' + result))
