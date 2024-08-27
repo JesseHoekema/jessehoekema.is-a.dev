@@ -1,4 +1,4 @@
-const userId = '1277550219252207659'; // De gebruikers-ID die je wilt volgen
+const userId = '1263110378666065944'; // De gebruikers-ID die je wilt volgen
 
 async function getUserStatus() {
     try {
