@@ -2,25 +2,25 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: grey; /* Default to offline */
+    background-color: #80848d; /* Default to offline */
 }
 
 .dot.online {
-    background-color: green;
-    color: green;
+    background-color: #50a162;
+    color: #e7b44e;
 }
 
 .dot.idle {
-    background-color: yellow;
-    color: yellow;
+    background-color: #e7b44e;
+    color: #e7b44e;
 }
 
 .dot.dnd {
-    background-color: red;
-    color: red;
+    background-color: #df4d4b;
+    color: #df4d4b;
 }
 
 .dot.offline {
-    background-color: grey;
-    color: grey;
+    background-color: #80848d;
+    color: #80848d;
 }
