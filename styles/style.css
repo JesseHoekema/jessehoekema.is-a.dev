@@ -106,7 +106,7 @@ h6:hover {
     background-color: #f5f5f5;
     border-radius: 10px;
     padding: 10px;
-    max-width: 90%; /* Stel een maximale breedte in */
+    max-width: 95%; /* Stel een maximale breedte in */
     max-height: 90vh; /* Stel een maximale hoogte in als 90% van de viewport hoogte */
     width: 600px;
     height: 350px;
