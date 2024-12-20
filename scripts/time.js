@@ -4,7 +4,7 @@ const codingsession = document.getElementById('codingsession');
 async function fetchData() {
     try {
       // Vervang 'URL_HIER' door de werkelijke URL van je API
-      const response = await fetch('https://wakatime.com/api/v1/users/jessiflessi/status_bar/today?api_key=waka_8ff54bbd-103f-4b67-9f8f-751aa74d75fb'); 
+      const response = await fetch('https://wakatime.com/api/v1/users/jessiflessi/status_bar/today?api_key=waka_sec_Zm1aDQ4WKabYVqVCQyROfUlVS1W8jVHllpZlfiwfZHVt3mySCc8puCx9ih6F8GCnfI3tu3siYawAwDxQ'); 
   
       // Zet de JSON-response om in een JavaScript-object
       const data = await response.json();
