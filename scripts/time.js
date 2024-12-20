@@ -4,7 +4,7 @@ const codingsession = document.getElementById('codingsession');
 async function fetchData() {
     try {
       // Vervang 'URL_HIER' door de werkelijke URL van je API
-      const response = await fetch(''); 
+      const response = await fetch('https://wakatime-api-website.vercel.app/api/wakatime'); 
   
       // Zet de JSON-response om in een JavaScript-object
       const data = await response.json();
