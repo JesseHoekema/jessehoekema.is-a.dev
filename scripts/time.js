@@ -1,22 +1,33 @@
-function updateTime() {
-    const formatter = new Intl.DateTimeFormat("en-US", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-      second: "numeric",
-      hour12: false,
-      timeZone: "Europe/Amsterdam",
-    });
-    const time = Date.now();
-    const formattedTime = formatter.format(time).replace("at", "•");
-    const clockText = document.getElementById("clock");
-    clockText.classList.remove("fade-in"); // Verwijder de fade-in klasse
-    void clockText.offsetWidth; // Forceer een reflow
-    clockText.textContent = formattedTime; // Update de tekst
-    clockText.classList.add("fade-in"); // Voeg de fade-in klasse weer toe voor een vloeiende overgang
-  }
+const codingsession = document.getElementById('codingsession');
 
-  setInterval(updateTime, 1000); // Update tijd elke seconde
-  updateTime(); // Zorg ervoor dat de tijd meteen wordt bijgewerkt
+// Functie om de GET-request uit te voeren
+async function fetchData() {
+    try {
+      // Vervang 'URL_HIER' door de werkelijke URL van je API
+      const response = await fetch('/api/wakatime'); 
+  
+      // Zet de JSON-response om in een JavaScript-object
+      const data = await response.json();
+      
+      // Haal de eerste categorie uit de 'categories' array
+      const category = data.data.categories[0]; 
+  
+      // Haal de uren, minuten, en tekst op
+      const hours = category.hours;
+      const minutes = category.minutes;
+      const text = category.text;
+  
+      // Log de opgehaalde gegevens naar de console
+      console.log(`${hours} Hours & ${minutes} Minutes`);
+      const formattedText = `${hours} Hours & ${minutes} Minutes`;
+
+      codingsession.textContent = formattedText
+      
+    } catch (error) {
+      console.error('Fout bij het ophalen van de data:', error);
+    }
+  }
+  
+  // Roep de fetchData functie aan
+  fetchData();
+  

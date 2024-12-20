@@ -3,453 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesse Hoekema</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/discordmobile.css">
-    <link rel="shortcut icon" href="assets/jessehoekemalogo-veryrounded.png" type="image/x-icon">
-    <meta name="description" content="Hello Im Jesse Hoekema Im A Web Developer.">
-    <meta name="keywords" content="Jesse Hoekema, jesse hoekema, Jesse hoekema, jesse Hoekema, Jessi Flessi, jessi flessi, Jessiflessi, JessiFlessi, JesseHoekema, jessehoekema">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y1FLSPCGE"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script>
-        window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-        gtag('config', 'G-3Y1FLSPCGE');
-    </script>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 100%;
-        }
-        form input {
-            background: transparent;
-            border: 1px solid;
-            border-radius: 15px;
-            padding: 10px;
-            outline: none;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        form #message {
-            background: transparent;
-            border: 1px solid;
-            border-radius: 15px;
-            padding: 10px;
-            outline: none;
-            width: 100%;
-            box-sizing: border-box;
-            height: 100px;
-            font-family: Arial, sans-serif;
-            resize: vertical ; /* Allows users to resize the textarea vertically */
-        }
-        form #message2 {
-            background: transparent;
-            border: 1px solid;
-            border-radius: 15px;
-            padding: 10px;
-            outline: none;
-            width: 100%;
-            box-sizing: border-box;
-            height: 100px;
-            font-family: Arial, sans-serif;
-            resize: vertical ; /* Allows users to resize the textarea vertically */
-        }
-        form button {
-            position: relative;
-            background: #f4a433;
-            border: none;
-            border-radius: 20px;
-            color: #fff;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            overflow: hidden;
-            transition: transform 0.7s ease;
-        }
-        form button:hover {
-            transform: scale(1.02);
-        }
-        label {
-            font-weight: 500;
-            color: black;
-        }
-    </style>
+    <title>Jesse Hoekema - Fullstack Developer</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <div class="desktop">
-    <div id="home" class="name-info">
-        <div class="header-space">
-            <header class="sticky-header">
-                <nav class="fade-in-text" id="navbar">
-                    <ul>
-                      <li>
-                        <a href="#home" class="scroll-link" rel="noopener noreferrer">Home</a>
-                      </li>
-                      <li>
-                        <a href="#about-me" class="scroll-link" rel="noopener noreferrer">About</a>
-                      </li>
-                      <li>
-                        <a href="#projects" class="scroll-link" rel="noopener noreferrer">Projects</a>
-                      </li>
-                      <li>
-                        <a href="#ci" class="scroll-link" rel="noopener noreferrer">Contact</a>
-                      </li>
-                    </ul>
-                </nav>
-            </header>
+    <div id="root">
+        <div class="dark-button">
+            <svg id="svg" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg"><path d="M9.272 2.406a1 1 0 0 0-1.23-1.355C6.59 1.535 5.432 2.487 4.37 3.55a11.399 11.399 0 0 0 0 16.182c4.518 4.519 11.51 4.261 15.976-.205 1.062-1.062 2.014-2.22 2.498-3.673A1 1 0 0 0 21.55 14.6c-3.59 1.322-7.675.734-10.434-2.025-2.765-2.766-3.328-6.83-1.844-10.168Z" fill=""/></svg>             
         </div>
-        <!-- Begin Introducing Myself-->
-        <h6 class="fade-in-text">Hello I Am<br><h5 class="fade-in-text">Jesse Hoekema</h5></h6>
-        <iframe 
-        class="fade-in-text"
-        src="https://lanyard.cnrad.dev/api/1263110378666065944?hideActivity=whenNotUsed&hideBadges=true"
-        width="100%"
-        height=300px
-        frameborder="0"
-        sandbox="allow-scripts"
-        id="discord-iframe"
-        ></iframe>
-        <!-- End Introducing Myself-->
-        <!--Begin About-->
-        <div class="about-me fade-in-text" id="about-me">
-            <h1>&nbsp;</h1>
-            <h1>&nbsp;</h1>
-            <h1>&nbsp;</h1>
-            <h1>&nbsp;</h1>
-            <center> 
-                <div id="about" class="box-am">
-                    <h1>About Me</h1>
-                    <p>
-                        Hello, I am Jesse Hoekema. I am an experienced developer.<br>
-                        My Skils Are:<br>
-                        <object data="https://skillicons.dev/icons?i=html,css,js,react,figma,arduino,bash,blender,raspberrypi,robloxstudio,svelte,swift" type="text/html" width="50%" height="50px" ></object><br>
-                        And I Use:<br>
-                        <object data="https://skillicons.dev/icons?i=vscode,docker,github,cloudflare,firebase" type="text/html" width="30%" height="50px" ></object><br>
-                        To Build My Projects<br>
-                        I have worked on numerous projects, including the personal site, ASCII-OS, JHOS, and much more.<br>
-                        My biggest project was the personal site, created using HTML, CSS, JS, and Firebase.<br>
-                        <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Give Me Some Money', '#000000', 'Q5Q3130JF1');kofiwidget2.draw();</script> <br>
-                    </p>
-                    
-                </div>
-            </center>
-        </div>
-        <!-- End About -->
-        <!-- Begin Projects-->
-    <div id="projects" class="projects fade-in-text">
-            <h1 class="ptt">Projects</h1>
-        <div class="flexbox">
-            <!-- Eerste rij met boxen -->
-            <div class="project">
-                <!-- inhoud van de eerste box -->
-                <div class="project-in">
-                    <h4>&nbsp;</h4>
-                    <h1>Fimpid</h1>
-                    <p>
-                        Made A Website For Fimpid
-                        <a href="https://fimpid.com" rel="noopener noreferrer" target="_blank">The Website</a><br>
-                    </p>
+        <div class="main">
+            <div class="profile">
+                <img src="assets/pfp.jpg" alt="Profiel Foto">
+                <div class="text">
+                    <p id="text1">Hello, I am</p>
+                    <h1 id="text2">Jesse Hoekema</h1>
                 </div>
             </div>
-            <div class="project">
-                
-                <div class="project-in">
-                    <h4>&nbsp;</h4>
-                    <h1>JHOS</h1>
-                    <p>
-                        This Is My Own Os<br>
-                        I Made It In Html, Css And Js<br>
-                        It Has Cool Tools<br>
-                        And It Is Open-Source<br>
-                        <a href="https://jessehoekema.github.io/JHOS3/" rel="noopener noreferrer" target="_blank">Try It For Free</a> Or <a href="https://github.com/jessehoekema/JHOS3/" rel="noopener noreferrer" target="_blank">Go To The Website</a><br>
-                    </p>
+            <div class="widgets">
+                <div id="widget">
+                    <h1>Last coding session</h1>
+                    <p id="codingsession">7 Hours & 10 Minutes</p>
+                </div>
+                <div id="widget">
+                    <h1>Spotify last listened</h1>
+                    <div class="track-info" >
+                        <div class="cover">
+                            <img id="cover-image" src="" alt="Album Cover">
+                        </div>
+                        <div>
+                            <p id="track-name" style="margin-bottom: 0px;">Loading...</p>
+                            <p id="track-artist" style="margin-top: 0px;">Artist Name</p>
+                            <p style="display: none;" id="track-time">Time Played</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="widget">
+                    <h1>Discord</h1>
+                    <div style="display: flex;">
+                    <div class="profile-container">
+                        <img src="/assets/pfp.jpg" alt="Profile Picture" class="profile-img">
+                        <div id="status-dot" class="dot"></div>
+                    </div>      
+                    <p style="font-size: 15px; margin-top: 15px;">Jessi Flessi</p> 
+                </div>               
                 </div>
             </div>
-            <div class="project">
-                <!-- inhoud van de derde box -->
-                <div class="project-in">
-                    <h4>&nbsp;</h4>
-                    <h1>Peaky<br>Blinders</h1>
-                    <p>
-                        I Made The Site For<br>
-                        Peaky Blinders
-                        <a href="https://pk.edyt.lol/" rel="noopener noreferrer" target="_blank">Go To The Site</a>
-                    </p>
+            <div class="about">
+                <h1 id="title">About</h1>
+                <p id="des">
+                    Hello im Jesse also known as Jessi Flessi online.<br>
+                    Im a full stack self taught developer im building some cool<br>
+                    projects.
+                    I make websites with a frontend and if you want a backend<br>
+                    if you want to know what i use as a developer just look above this text<br>
+                    if you need a site just contact me on discord: jessiflessi<br>
+                </p>
+            </div>
+            <div class="skills">
+                <h1 id="title" style="margin-top: 15px;">Skills</h1>
+                <img src="/assets/skills.png" id="skills">
+            </div>
+            <div class="projects">
+                <h1 id="title">Projects</h1>
+                <div id="rows">
+                    <div id="row">
+                        <div id="project">
+                            <h1 id="title-project">JHOS</h1>
+                            <p id="des-project">
+                                This Is My Own Os
+                                Its a linux distro that is open-source<br>
+                                We are making it so <a href="https://discord.gg/uWZFNdJGXk" style="color: white;">join the discord</a>
+                            </p>
+                        </div>
+                        <div id="project">
+                            <h1 id="title-project">JHBROWSER</h1>
+                            <p id="des-project">
+                                This Is My Own Browser
+                                Its Not Done
+                                Only The Extension
+                                The Extension You Can Find And Install It <a href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn" style="color: white;">here</a>
+                            </p>
+                        </div>
+                        <div id="project">
+                            <h1 id="title-project">Fimpid</h1>
+                            <p id="des-project">
+                                I made a site and account backend <BR>
+                                for Fimpid but the project is closed at the moment
+                            </p>
+                        </div>
+                    </div>
+                    <div id="row" style="margin-top: 20px;">
+                        <div id="project">
+                            <h1 id="title-project">Routify</h1>
+                            <p id="des-project">
+                                Made a whole trip system for Routify.<br> 
+                                made with mysql and some more things. it is in progress
+                            </p>
+                        </div>
+                        <div id="project">
+                            <h1 id="title-project">Peaky Blinders</h1>
+                            <p id="des-project">
+                                I Made The Site For
+                                Peaky Blinders Go To <a style="color: white;" href="https://pk.edyt.lol/">The Site</a>
+                            </p>
+                        </div>
+                        <div id="project">
+                            <h1 id="title-project">Edyt</h1>
+                            <p id="des-project">
+                                Made a site for edyt.lol using <br>
+                                frontend technology. Go to <a href="https://edyt.lol" style="color: white;">the site</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="flexbox">
-            <!-- Tweede rij met boxen -->
-            <div class="project">
-                <!-- inhoud van de vierde box -->
-                <div class="project-in">
-                    <h4>&nbsp;</h4>
-                    <h1>JHBROWSER</h1>
-                    <p>
-                        This Is My Own Browser<br>
-                        Its Not Done<br>
-                        Only The Extension<br>
-                        The Extension You Can Find And Install It <a href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn" rel="noopener noreferrer" target="_blank">here</a><br>
-                    </p>
-                </div>
-            </div>
-            <div class="project">
-                <!-- inhoud van de vijfde box -->
-                <div class="project-in">
-                    <h4>&nbsp;</h4>
-                    <h1>ASCII OS</h1>
-                    <p>
-                        This Is A Simple Open-Source OS<br>
-                        It Is A OS For The Terminal<br>
-                        I Made It In Bash<br>
-                        Check It Out<br>
-                        <a href="https://www.github.com/jessehoekema/ascii-os" rel="noopener noreferrer" target="_blank">Here</a><br>
-                    </p>
-                </div>
-            </div>
-            <div class="project">
-                <!-- inhoud van de zesde box -->
-                <div class="project-in">
-                    <h4>&nbsp;</h4>
-                    <h1>JHRADIO</h1>
-                    <p>
-                        My Own Radio Station<br>
-                        With Super Cool Songs<br>
-                        Play It<br>
-                        <a href="https://jhradio.jessehoekema.com/" rel="noopener noreferrer" target="_blank">Here</a>
-                    </p>
+            <div class="contact">
+                <h1 id="title">Contact</h1>
+                <div id="contact-form">
+                    <form id="contact-form2">
+                    <input type="text" class="input-1" placeholder="Name" id="name">
+                    <br>
+                    <input type="text" class="input-1" placeholder="Email" style="margin-top: 10px;" id="email">
+                    <br>
+                    <textarea class="input-2" placeholder="Your Message" style="margin-top: 10px;" id="message"></textarea>
+                    <br>
+                    <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
+                    <br>
+                    <button class="send-btn" id="send-btn" type="submit">Send</button>
+                </form>
                 </div>
             </div>
         </div>
-        <div class="flexbox" style="justify-content: center; align-items: center; text-align: center;">
-            <!-- knop voor meer informatie -->
-            <div class="more">
-                <a class="view-more" class="page-transition-link" href="projects.html" rel="noopener noreferrer" target="_self">More</a>
-            </div>
-        </div>
     </div>
-    <!-- End Projects -->
-    <!-- Begin Contact-->
-    <div id="contact" class="contact fade-in-text">
-        <div id="ci" class="contact-info">
-            <form id="contact-form">
-                <h1>Contact</h1>
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Name">
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Email">
-                
-                <label for="message">Message For Me</label>
-                <textarea id="message" placeholder="Leave A Message"></textarea>
-                
-                <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
-                
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
-    <!-- End Contact-->
-    <!-- Begin Footer -->
-    <div class="footer-bb4">
-        <div id="clock" style="color: #e9e2e2; text-shadow: 0 0 10px rgba(0, 0, 0.2, 0.5);"></div>
-        <p style="font-size: 2px;">&nbsp;</p>
-    </div>
-    <!-- End Footer -->
-    </div>
-</div>
-<!-- end desktop -->
-<div class="mobile">
-     <!-- Home Section -->
-     <div id="mobilehome" class="section fade-in-text" style="background-color: #f0f0f0;">
-        <img src="assets/jessehoekemalogo-rounded.png" alt="Center Image">
-        <div class="name">
-            <h1>Jesse Hoekema <span><div id="status-dot" class="dot"></div></span></h1>
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <div id="mobileabout" class="section" style="background-color: #e0e0e0;">
-        <div class="content-box">
-            <h1>About</h1>
-            <p>
-                Hello, I am Jesse Hoekema. I am an experienced developer.<br>
-                My Skils Are:<br>
-                <object data="https://skillicons.dev/icons?i=html,css,js,react,figma,arduino,bash,blender,raspberrypi,robloxstudio,svelte,swift" type="text/html" width="100%" height="50px" ></object><br>
-                And I Use:<br>
-                <object data="https://skillicons.dev/icons?i=vscode,docker,github,cloudflare,firebase" type="text/html" width="40%" height="50px" ></object><br>
-                To Build My Projects<br>
-                I have worked on numerous projects, including the personal site, ASCII-OS, JHOS, and much more.<br>
-                My biggest project was the personal site, created using HTML, CSS, JS, and Firebase.<br>
-                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Give Me Some Money', '#000000', 'Q5Q3130JF1');kofiwidget2.draw();</script> <br>
-            </p>
-            
-        </div>
-    </div>
-
-    <!-- Projects Section -->
-    <div id="mobileprojects" class="section" style="background-color: #d0d0d0;">
-            <h1>Projects</h1>
-        <div class="content-box">
-            <h1>Fimpid</h1>
-            <p>
-                Made A Website For Fimpid<br>
-                <a href="https://fimpid.com" rel="noopener noreferrer" target="_blank">The Website</a><br>
-            </p>
-        </div>
-        <div class="content-box">
-            <h1>JHOS</h1>
-            <p>
-                This Is My Own Os<br>
-                I Made It In Html, Css And Js<br>
-                It Has Cool Tools<br>
-                And It Is Open-Source<br>
-                <a href="https://jessehoekema.github.io/JHOS3/" rel="noopener noreferrer" target="_blank">Try It For Free</a> Or <a href="https://github.com/jessehoekema/JHOS3/" rel="noopener noreferrer" target="_blank">Go To The Website</a><br>
-            </p>
-        </div>
-        <div class="content-box">
-            <h1>JHBROWSER</h1>
-            <p>
-                This Is My Own Browser<br>
-                Its Not Done<br>
-                Only The Extension<br>
-                The Extension You Can Find And Install It <a href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn" rel="noopener noreferrer" target="_blank">here</a><br>
-            </p>
-        </div>
-        <a href="projects.html">More</a>
-    </div>
-
-    <!-- Contact Section -->
-    <div id="mobilecontact" class="section" style="background-color: #c0c0c0;">
-        <div class="content-box" id="contactbox">
-            <form id="contact-form2">
-                <h1>Contact</h1>
-                <label for="name">Name</label>
-                <input type="text" id="name2" placeholder="Name" name="name">
-                
-                <label for="email">Email</label>
-                <input type="email" id="email2" placeholder="Email" name="email">
-                
-                <label for="message">Message For Me</label>
-                <textarea id="message2" placeholder="Leave A Message"></textarea>
-
-                <p style="display: none; color: green;" id="sendconfirm2">Message Send!</p>
-                
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer Menu -->
-    <div class="footer-menu">
-        <a href="#mobilehome" class="scrolllink">Home</a>
-        <a href="#mobileabout" class="scrolllink">About</a>
-        <a href="#mobileprojects" class="scrolllink">Projects</a>
-        <a href="#mobilecontact" class="scrolllink">Contact</a>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var scrollLinks = document.querySelectorAll('.scrolllink');
-
-            scrollLinks.forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    var targetId = this.getAttribute('href').substring(1);
-                    var targetElement = document.getElementById(targetId);
-
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
-</div>    
-    <script src="scripts/scroll.js"></script>
-    <script src="scripts/time.js"></script>
-    <script src="scripts/mobile.js"></script>
-    <script src="scripts/discordmobile.js"></script>
-    <script src="scripts/script.js"></script>
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault(); // Voorkom de standaard formulierverzending
-    
-          // Verkrijg de waarden van de formulierinvoervelden
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const message = document.getElementById('message').value;
-          const sendconfirm = document.getElementById('sendconfirm');
-    
-          // Zet de gegevens om naar een object
-          const data = {
-            name: name,        // Verkrijg waarde van het invoerveld met id 'name'
-            email: email,      // Verkrijg waarde van het invoerveld met id 'email'
-            message: message   // Verkrijg waarde van het invoerveld met id 'message'
-          };
-    
-          console.log('Formuliergegevens:', data);
-    
-          // Optioneel: Verstuur de gegevens naar een server
-          fetch('https://form.jessehoekema.com/api/index', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Netwerkreactie was niet ok.');
-            }
-              sendconfirm.style.display = "block"
-            return response.text(); // Of response.json() als je server JSON terugstuurt
-          })
-          .catch(error => console.error('Fout:', error));
-        });
-        document.getElementById('contact-form2').addEventListener('submit', function(event) {
-          event.preventDefault(); // Voorkom de standaard formulierverzending
-    
-          // Verkrijg de waarden van de formulierinvoervelden
-          const name2 = document.getElementById('name2').value;
-          const email2 = document.getElementById('email2').value;
-          const message2 = document.getElementById('message2').value;
-            const sendconfirm2 = document.getElementById('sendconfirm2');
-    
-          // Zet de gegevens om naar een object
-          const data = {
-            name: name2,        // Verkrijg waarde van het invoerveld met id 'name'
-            email: email2,      // Verkrijg waarde van het invoerveld met id 'email'
-            message: message2   // Verkrijg waarde van het invoerveld met id 'message'
-          };
-    
-          console.log('Formuliergegevens:', data);
-    
-          // Optioneel: Verstuur de gegevens naar een server
-          fetch('https://form.jessehoekema.com/api/index', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Netwerkreactie was niet ok.');
-            }
-              sendconfirm2.style.display = "block"
-            return response.text(); // Of response.json() als je server JSON terugstuurt
-          })
-          .then(result => console.log('Server antwoord: ' + result))
-          .catch(error => console.error('Fout:', error));
-        });
-      </script>
+    <script src="/scripts/script.js"></script>
+    <script src="/scripts/np.js"></script>
+    <script src="/scripts/discord.js"></script>
+    <script src="/scripts/time.js"></script>
+    <script src="/scripts/contact.js"></script>
 </body>
 </html>
