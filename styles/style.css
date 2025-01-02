@@ -8,6 +8,15 @@ body {
     align-items: center;
     min-height: 40vh;
     transition: background-color 0.5s ease, color 0.5s ease;
+    --main-color: #FFCC66;
+}
+body.light {
+    --selection-bg: #000;
+    --selection-color: var(--main-color);
+}
+body.dark {
+    --selection-bg: var(--main-color);
+    --selection-color: #000;
 }
   
   @keyframes fadeInAnimation {
@@ -255,4 +264,8 @@ svg.light {
     background-color: red; /* Pas de kleur van de stip aan */
     border-radius: 50%; /* Maak de stip rond */
     border: 2px solid  #E6E6E6; /* Voeg een witte rand toe voor effect */
+  }
+  ::selection {
+    background: var(--selection-bg);
+    color: var(--selection-color);
   }

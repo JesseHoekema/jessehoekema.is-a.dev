@@ -25,6 +25,8 @@ const updateTextColor = () => {
             body.style.backgroundColor = '#24221D'
             hellotext.style.color = '#FFF1D4'
             nametext.style.color = '#FFCC66'
+            body.classList.remove('light');
+            body.classList.add('dark');
             svg.style.fill = '#FFCC66'
             for (let pagraf of pagrafs) {
                 pagraf.style.color = '#FFFFFF'
@@ -52,6 +54,8 @@ const updateTextColor = () => {
             hellotext.style.color = '#110C03'
             sendbtn.style.color = '#FFFFFF'  
             svg.style.fill = '#000000'
+            body.classList.remove('dark');
+            body.classList.add('light');
 
             project.classList.add('dark');
             nameinput.style.border = '1px solid #000000'
