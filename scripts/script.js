@@ -45,7 +45,13 @@ const updateTextColor = () => {
             emailinput.style.border = '1px solid #FFCC66'
             messageinput.style.border = '1px solid #FFCC66'
             sendbtn.style.backgroundColor = '#FFCC66'  
-            sendbtn.style.color = '#000000'   
+            sendbtn.style.color = '#000000'  
+            kofiWidgetOverlay.draw('jessiflessi', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Donate',
+                'floating-chat.donateButton.background-color': '#FFCC66',
+                'floating-chat.donateButton.text-color': '#000'
+            });
                
         } else {
             header.style.color = '#000000'; // Dark text for light mode
@@ -73,6 +79,12 @@ const updateTextColor = () => {
                 widget.classList.remove('dark');
                 widget.classList.add('light');
             } 
+            kofiWidgetOverlay.draw('jessiflessi', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Donate',
+                'floating-chat.donateButton.background-color': '#5c4e30',
+                'floating-chat.donateButton.text-color': '#fff'
+            });
         }
     }
 };
@@ -86,3 +98,13 @@ svg.addEventListener('click', () => {
 
 // Initial color update
 updateTextColor();
+
+function donate() {
+    kofiWidgetOverlay.draw('jessiflessi', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Donate',
+        'floating-chat.donateButton.background-color': '#FFCC66',
+        'floating-chat.donateButton.text-color': '#000'
+    });
+}
+donate()
