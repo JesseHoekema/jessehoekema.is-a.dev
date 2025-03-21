@@ -21,6 +21,7 @@ const updateTextColor = () => {
     const headers = document.getElementsByTagName('h1'); // Get all h1 elements
     for (let header of headers) {
         if (DarkMode) {
+            localStorage.setItem('theme', 'dark');
             header.style.color = '#FFCC66'; // Light text for dark mode
             body.style.backgroundColor = '#24221D'
             hellotext.style.color = '#FFF1D4'
@@ -54,6 +55,7 @@ const updateTextColor = () => {
             });
                
         } else {
+            localStorage.setItem('theme', 'light');
             header.style.color = '#000000'; // Dark text for light mode
             body.style.backgroundColor = '#FFCC66';
             nametext.style.color = '#5C4E30'
@@ -97,7 +99,6 @@ svg.addEventListener('click', () => {
 });
 
 // Initial color update
-updateTextColor();
 
 function donate() {
     kofiWidgetOverlay.draw('jessiflessi', {
@@ -108,3 +109,13 @@ function donate() {
     });
 }
 donate()
+
+function loadTheme() {
+    if (localStorage.getItem('theme') === 'dark') {
+        DarkMode = true;
+    } else {
+        DarkMode = false;
+    }
+    updateTextColor();
+}
+loadTheme();
