@@ -37,3 +37,6 @@ async function fetchLastPlayed() {
 
 
 fetchLastPlayed();
+setInterval(() => {
+    fetchLastPlayed();
+}, 3000);
