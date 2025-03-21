@@ -37,3 +37,6 @@ async function fetchLastPlayed() {
 
 
 fetchLastPlayed();
+setTimeout(() => {
+    fetchLastPlayed();
+}, 3000);
