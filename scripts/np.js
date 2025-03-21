@@ -37,6 +37,6 @@ async function fetchLastPlayed() {
 
 
 fetchLastPlayed();
-setTimeout(() => {
+setInterval(() => {
     fetchLastPlayed();
 }, 3000);
