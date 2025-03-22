@@ -326,3 +326,15 @@ svg.light {
     margin-top: -7px;
     height: 25px;
 }
+.moreDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+#moreButton {
+    cursor: pointer;
+}
