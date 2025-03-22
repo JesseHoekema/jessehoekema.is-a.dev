@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,22 +11,28 @@
     <meta name="description" content="Nothing To Worry About Just My Personal Site">
     <meta property="og:title" content="Jesse Hoekema - Fullstack Developer">
     <meta property="og:description" content="Nothing To Worry About Just My Personal Site">
-    <meta property="og:image" content="/assets/logo.png"> <!-- Zorg ervoor dat het logo beschikbaar is op een externe URL -->
+    <meta property="og:image" content="/assets/logo.png">
+    <!-- Zorg ervoor dat het logo beschikbaar is op een externe URL -->
     <meta property="og:type" content="website">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y1FLSPCGE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-3Y1FLSPCGE');
     </script>
-    
+
 </head>
+
 <body>
     <div id="root">
         <div class="dark-button">
-            <svg id="svg" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg"><path d="M9.272 2.406a1 1 0 0 0-1.23-1.355C6.59 1.535 5.432 2.487 4.37 3.55a11.399 11.399 0 0 0 0 16.182c4.518 4.519 11.51 4.261 15.976-.205 1.062-1.062 2.014-2.22 2.498-3.673A1 1 0 0 0 21.55 14.6c-3.59 1.322-7.675.734-10.434-2.025-2.765-2.766-3.328-6.83-1.844-10.168Z" fill=""/></svg>             
+            <svg id="svg" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9.272 2.406a1 1 0 0 0-1.23-1.355C6.59 1.535 5.432 2.487 4.37 3.55a11.399 11.399 0 0 0 0 16.182c4.518 4.519 11.51 4.261 15.976-.205 1.062-1.062 2.014-2.22 2.498-3.673A1 1 0 0 0 21.55 14.6c-3.59 1.322-7.675.734-10.434-2.025-2.765-2.766-3.328-6.83-1.844-10.168Z"
+                    fill="" />
+            </svg>
         </div>
         <div class="main">
             <div class="kofiWidgetOverlay"></div>
@@ -43,11 +50,11 @@
                 </div>
                 <div id="widget">
                     <h1>Spotify last listened</h1>
-                    <div class="track-info" >
+                    <div class="track-info">
                         <div class="cover">
                             <img id="cover-image" src="" alt="Album Cover">
                         </div>
-                        <div>
+                        <div id="track-info-text">
                             <p id="track-name" style="margin-bottom: 0px;">Loading...</p>
                             <p id="track-artist" style="margin-top: 0px;">Artist Name</p>
                             <p style="display: none;" id="track-time">Time Played</p>
@@ -57,12 +64,12 @@
                 <div id="widget">
                     <h1>Discord</h1>
                     <div style="display: flex;">
-                    <div class="profile-container">
-                        <img src="/assets/pfp.jpg" alt="Profile Picture" class="profile-img">
-                        <div id="status-dot" class="dot"></div>
-                    </div>      
-                    <p style="font-size: 15px; margin-top: 15px;">Jessi Flessi</p> 
-                </div>               
+                        <div class="profile-container">
+                            <img src="/assets/pfp.jpg" alt="Profile Picture" class="profile-img">
+                            <div id="status-dot" class="dot"></div>
+                        </div>
+                        <p style="font-size: 15px; margin-top: 15px;">Jessi Flessi</p>
+                    </div>
                 </div>
             </div>
             <div class="about">
@@ -89,8 +96,10 @@
                             <p id="des-project">
                                 This Is My Own Os
                                 Its a linux distro that is open-source<br>
-                                We are making it so <a href="https://discord.gg/uWZFNdJGXk" style="color: white;">join the discord</a>
+                                We are making it so <a href="https://discord.gg/uWZFNdJGXk" style="color: white;">join
+                                    the discord</a>
                             </p>
+                            <img src="assets/tools/jhos.svg" class="toolicons" alt="Tool Icons" />
                         </div>
                         <div id="project">
                             <h1 id="title-project">JHBROWSER</h1>
@@ -98,8 +107,11 @@
                                 This Is My Own Browser
                                 Its Not Done
                                 Only The Extension
-                                The Extension You Can Find And Install It <a href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn" style="color: white;">here</a>
+                                The Extension You Can Find And Install It <a
+                                    href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn"
+                                    style="color: white;">here</a>
                             </p>
+                            <img src="assets/tools/jhbrowser.svg" class="toolicons" alt="Tool Icons" />
                         </div>
                         <div id="project">
                             <h1 id="title-project">Fimpid</h1>
@@ -107,29 +119,36 @@
                                 I made a site and account backend <BR>
                                 for Fimpid but the project is closed at the moment
                             </p>
+                            <img src="assets/tools/fimpid.svg" class="toolicons" alt="Tool Icons" />
                         </div>
                     </div>
                     <div id="row" style="margin-top: 20px;">
                         <div id="project">
                             <h1 id="title-project">Routify</h1>
                             <p id="des-project">
-                                Made a whole trip system for Routify.<br> 
+                                Made a whole trip system for Routify.<br>
                                 made with mysql and some more things. it is in progress
                             </p>
+                            <img src="assets/tools/routify.svg" class="toolicons" alt="Tool Icons" />
                         </div>
                         <div id="project">
                             <h1 id="title-project">Peaky Blinders</h1>
                             <p id="des-project">
                                 I Made The Site For
-                                Peaky Blinders Go To <a style="color: white;" href="https://pk.edyt.lol/">The Site</a>
+                                Peaky Blinders Go To <a style="color: white;" href="https://pk.edyt.lol/">The
+                                    Site</a><br>
+                                <br>
                             </p>
+                            <img src="assets/tools/pk.svg" class="toolicons" alt="Tool Icons" />
                         </div>
                         <div id="project">
                             <h1 id="title-project">Edyt</h1>
                             <p id="des-project">
-                                Made a site for edyt.lol using <br>
-                                frontend technology. Go to <a href="https://edyt.lol" style="color: white;">the site</a>
+                                Made a site and dashboard system <br> for edyt.lol using
+                                frontend and backend technology. Go to <a href="https://edyt.lol"
+                                    style="color: white;">the site</a><br>
                             </p>
+                            <img src="assets/tools/edyt.svg" class="toolicons" alt="Tool Icons" />
                         </div>
                     </div>
                 </div>
@@ -138,16 +157,17 @@
                 <h1 id="title">Contact</h1>
                 <div id="contact-form">
                     <form id="contact-form2">
-                    <input type="text" class="input-1" placeholder="Name" id="name">
-                    <br>
-                    <input type="text" class="input-1" placeholder="Email" style="margin-top: 10px;" id="email">
-                    <br>
-                    <textarea class="input-2" placeholder="Your Message" style="margin-top: 10px;" id="message"></textarea>
-                    <br>
-                    <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
-                    <br>
-                    <button class="send-btn" id="send-btn" type="submit">Send</button>
-                </form>
+                        <input type="text" class="input-1" placeholder="Name" id="name">
+                        <br>
+                        <input type="text" class="input-1" placeholder="Email" style="margin-top: 10px;" id="email">
+                        <br>
+                        <textarea class="input-2" placeholder="Your Message" style="margin-top: 10px;"
+                            id="message"></textarea>
+                        <br>
+                        <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
+                        <br>
+                        <button class="send-btn" id="send-btn" type="submit">Send</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -159,4 +179,5 @@
     <script src="/scripts/time.js"></script>
     <script src="/scripts/contact.js"></script>
 </body>
+
 </html>

@@ -26,13 +26,13 @@ async function fetchLastPlayed() {
             trackTime.textContent = '';
             coverImage.src = '';
         }
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            trackName.textContent = 'Failed to load track data.';
-            trackArtist.textContent = '';
-            trackTime.textContent = '';
-            coverImage.src = '';
-        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        trackName.textContent = 'Failed to load track data.';
+        trackArtist.textContent = '';
+        trackTime.textContent = '';
+        coverImage.src = '';
+    }
 }
 
 
@@ -40,3 +40,18 @@ fetchLastPlayed();
 setInterval(() => {
     fetchLastPlayed();
 }, 3000);
+function adjustFontSize() {
+    const container = document.getElementById('track-info-text');
+    const text = document.getElementById('track-title');
+    let fontSize = parseInt(window.getComputedStyle(text).fontSize);
+  
+    // Reduce font size until the text fits within the container's height
+    while (text.scrollHeight > container.offsetHeight && fontSize > 10) {
+      fontSize--;
+      text.style.fontSize = `${fontSize}px`;
+    }
+  }
+  
+  // Run the function when the page loads and when the window is resized
+  window.onload = adjustFontSize;
+  window.onresize = adjustFontSize;
