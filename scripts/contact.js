@@ -6,7 +6,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     const sendconfirm = document.getElementById('sendconfirm');
-
+    const loader = document.getElementById('loader');
+    loader.style.display = "block"
+    sendconfirm.style.display = "none"
     // Zet de gegevens om naar een object
     const data = {
       name: name,        // Verkrijg waarde van het invoerveld met id 'name'
@@ -29,6 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         throw new Error('Netwerkreactie was niet ok.');
       }
         sendconfirm.style.display = "block"
+        loader.style.display = "none"
       return response.text(); // Of response.json() als je server JSON terugstuurt
     })
     .catch(error => console.error('Fout:', error));

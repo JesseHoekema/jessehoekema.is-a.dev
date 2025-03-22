@@ -164,6 +164,7 @@
                         <textarea class="input-2" placeholder="Your Message" style="margin-top: 10px;"
                             id="message"></textarea>
                         <br>
+                        <l-ring size="30" stroke="5" bg-opacity="0" speed="2" color="black" id="loader" style="display: none;"></l-ring>
                         <p style="display: none; color: green;" id="sendconfirm">Message Send!</p>
                         <br>
                         <button class="send-btn" id="send-btn" type="submit">Send</button>
@@ -173,6 +174,7 @@
         </div>
     </div>
     <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring.js"></script>
     <script src="/scripts/script.js"></script>
     <script src="/scripts/np.js"></script>
     <script src="/scripts/discord.js"></script>
