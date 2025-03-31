@@ -111,19 +111,15 @@ function donate() {
 donate()
 
 function loadTheme() {
-    // Check if a theme is stored in localStorage
-    const storedTheme = localStorage.getItem('theme');
-
-    // If no theme is stored, default to 'dark'
-    if (!storedTheme) {
-        localStorage.setItem('theme', 'dark'); // Set default theme to 'dark'
-        DarkMode = true; // Enable dark mode
+    if (localStorage.getItem('theme')) {
+        if (localStorage.getItem('theme') === 'dark') {
+            DarkMode = true;
+        } else {
+            DarkMode = false;
+        }
     } else {
-        // Use the stored theme
-        DarkMode = storedTheme === 'dark';
+        DarkMode = true;
     }
-
-    // Update the text color or any other UI elements
     updateTextColor();
 }
-loadTheme()
+loadTheme();
