@@ -1,4 +1,4 @@
-let DarkMode = true;
+let DarkMode;
 const svg = document.getElementById('svg');
 const body = document.body;
 const nametext = document.getElementById('text2');
