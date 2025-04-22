@@ -14,6 +14,7 @@ const emailinput = document.getElementById('email');
 const messageinput = document.getElementById('message');
 const sendbtn = document.getElementById('send-btn');
 const style = document.createElement('style');
+const cursor = document.getElementById('cursor');
 document.head.appendChild(style);
 
 // Function to update the text color based on DarkMode
@@ -23,6 +24,7 @@ const updateTextColor = () => {
         if (DarkMode) {
             localStorage.setItem('theme', 'dark');
             header.style.color = '#FFCC66'; // Light text for dark mode
+            cursor.style.backgroundColor = 'var(--main-color)';
             body.style.backgroundColor = '#24221D'
             hellotext.style.color = '#FFF1D4'
             nametext.style.color = '#FFCC66'
@@ -32,35 +34,36 @@ const updateTextColor = () => {
             for (let pagraf of pagrafs) {
                 pagraf.style.color = '#FFFFFF'
             }
-            
+
             for (let proj of projects) {
                 proj.classList.remove('light');
                 proj.classList.add('dark');
-            } 
+            }
             for (let widget of widgets) {
                 widget.classList.remove('light');
                 widget.classList.add('dark');
-            } 
-            about.style.color = '#FFF1D4' 
+            }
+            about.style.color = '#FFF1D4'
             nameinput.style.border = '1px solid #FFCC66'
             emailinput.style.border = '1px solid #FFCC66'
             messageinput.style.border = '1px solid #FFCC66'
-            sendbtn.style.backgroundColor = '#FFCC66'  
-            sendbtn.style.color = '#000000'  
+            sendbtn.style.backgroundColor = '#FFCC66'
+            sendbtn.style.color = '#000000'
             kofiWidgetOverlay.draw('jessiflessi', {
                 'type': 'floating-chat',
                 'floating-chat.donateButton.text': 'Donate',
                 'floating-chat.donateButton.background-color': '#FFCC66',
                 'floating-chat.donateButton.text-color': '#000'
             });
-               
+
         } else {
             localStorage.setItem('theme', 'light');
             header.style.color = '#000000'; // Dark text for light mode
+            cursor.style.backgroundColor = 'var(--second-color)';
             body.style.backgroundColor = '#FFCC66';
             nametext.style.color = '#5C4E30'
             hellotext.style.color = '#110C03'
-            sendbtn.style.color = '#FFFFFF'  
+            sendbtn.style.color = '#FFFFFF'
             svg.style.fill = '#000000'
             body.classList.remove('dark');
             body.classList.add('light');
@@ -73,14 +76,14 @@ const updateTextColor = () => {
             for (let proj of projects) {
                 proj.classList.remove('dark');
                 proj.classList.add('light');
-            } 
+            }
             for (let pagraf of pagrafs) {
                 pagraf.style.color = '#110C03'
             }
             for (let widget of widgets) {
                 widget.classList.remove('dark');
                 widget.classList.add('light');
-            } 
+            }
             kofiWidgetOverlay.draw('jessiflessi', {
                 'type': 'floating-chat',
                 'floating-chat.donateButton.text': 'Donate',
@@ -123,3 +126,30 @@ function loadTheme() {
     updateTextColor();
 }
 loadTheme();
+
+
+document.addEventListener('mousemove', e => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+document.addEventListener('mouseover', e => {
+    const tag = e.target.tagName.toLowerCase();
+    if (tag !== 'body' && tag !== 'html') {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.2)';
+    }
+});
+
+document.addEventListener('mouseout', e => {
+    const tag = e.target.tagName.toLowerCase();
+    if (tag !== 'body' && tag !== 'html') {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    }
+});
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+});
+
+// Show it again when re-entering
+document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+});
