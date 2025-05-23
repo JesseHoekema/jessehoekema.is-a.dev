@@ -134,14 +134,18 @@ document.addEventListener('mousemove', e => {
 });
 document.addEventListener('mouseover', e => {
     const tag = e.target.tagName.toLowerCase();
-    if (tag !== 'body' && tag !== 'html') {
+    const id = e.target.id.toLowerCase();
+    const className = e.target.className.toLowerCase();
+    if (tag !== 'body' && tag !== 'html' && id !== 'root' && className !== 'main') {
         cursor.style.transform = 'translate(-50%, -50%) scale(1.2)';
     }
 });
 
 document.addEventListener('mouseout', e => {
     const tag = e.target.tagName.toLowerCase();
-    if (tag !== 'body' && tag !== 'html') {
+    const id = e.target.id.toLowerCase();
+    const className = e.target.className.toLowerCase();
+    if (tag !== 'body' && tag !== 'html' && id !== 'root' && className !== 'main') {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     }
 });
