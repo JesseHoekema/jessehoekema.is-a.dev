@@ -340,7 +340,7 @@ svg.light {
     width: 100%;
 }
 #moreButton {
-    cursor: pointer;
+    cursor: none;
 }
 .cursor {
     position: fixed;

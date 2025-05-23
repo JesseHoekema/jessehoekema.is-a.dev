@@ -44,14 +44,14 @@ function adjustFontSize() {
     const container = document.getElementById('track-info-text');
     const text = document.getElementById('track-title');
     let fontSize = parseInt(window.getComputedStyle(text).fontSize);
-  
+
     // Reduce font size until the text fits within the container's height
     while (text.scrollHeight > container.offsetHeight && fontSize > 10) {
-      fontSize--;
-      text.style.fontSize = `${fontSize}px`;
+        fontSize--;
+        text.style.fontSize = `${fontSize}px`;
     }
-  }
-  
-  // Run the function when the page loads and when the window is resized
-  window.onload = adjustFontSize;
-  window.onresize = adjustFontSize;
+}
+
+// Run the function when the page loads and when the window is resized
+window.onload = adjustFontSize;
+window.onresize = adjustFontSize;
