@@ -31,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
       }
         sendconfirm.style.display = "block"
         loader.style.display = "none"
-        document.getElementById('contact-form').reset();
+        document.getElementById('contact-form2').reset();
         sendbtn.disabled = true;
       return response.text(); // Of response.json() als je server JSON terugstuurt
     })
