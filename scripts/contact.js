@@ -19,7 +19,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     console.log('Formuliergegevens:', data);
 
     // Optioneel: Verstuur de gegevens naar een server
-    fetch('https://form.jessehoekema.com/api/index', {
+    fetch('https://contactmin.jessehoekema.com/api/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
