@@ -356,7 +356,7 @@ svg.light {
     z-index: 9999;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
     .main {
         padding: 15px 0;
@@ -463,7 +463,7 @@ svg.light {
 
 }
 
-/* Fix for wider screens */
+
 @media (min-width: 769px) {
     .main {
         max-width: 1200px;
