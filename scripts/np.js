@@ -5,53 +5,84 @@ const trackArtist = document.getElementById('track-artist');
 const trackTime = document.getElementById('track-time');
 const coverImage = document.getElementById('cover-image');
 
-// Fetch the last played track using the Last.fm API
-async function fetchLastPlayed() {
-    const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
+const socket = new WebSocket("wss://lastfm.dandandev.xyz");
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+socket.onopen = () => {
+    console.log("Connected to LastFM WebSocket");
+};
 
-        if (data.recenttracks.track.length > 0) {
-            const track = data.recenttracks.track[0];
-            trackName.textContent = track.name;
-            trackArtist.textContent = track.artist['#text'];
-            trackTime.textContent = `Played on: ${track.date ? new Date(track.date['uts'] * 1000).toLocaleString() : 'Just now'}`;
-            coverImage.src = track.image[2]['#text'];  // Get the large album cover image
-            coverImage.alt = `Cover of ${track.name} by ${track.artist['#text']}`;
-        } else {
-            trackName.textContent = 'No recent tracks found.';
-            trackArtist.textContent = '';
-            trackTime.textContent = '';
-            coverImage.src = '';
+socket.onmessage = (event) => {
+    const parsed = JSON.parse(event.data);
+    const opcode = parsed.op;
+    const data = parsed.d;
+
+    if (opcode === 0) {
+        setInterval(() => {
+            socket.send(JSON.stringify({ op: 1 }));
+        }, data.pingInterval);
+
+        socket.send(JSON.stringify({ 
+            op: 2, 
+            d: { user: "jessehoekema" }
+        }));
+    }
+
+    if (opcode === 2) {
+        if (data.error) {
+            console.error('Error:', data.error);
+            updateTrackInfo(null);
+            return;
         }
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        trackName.textContent = 'Failed to load track data.';
+
+        const track = data.track;
+        updateTrackInfo(track);
+    }
+};
+
+socket.onerror = (error) => {
+    console.error('WebSocket Error:', error);
+    updateTrackInfo(null);
+};
+
+function updateTrackInfo(track) {
+    if (!track) {
+        trackName.textContent = 'Failed to load track data';
         trackArtist.textContent = '';
         trackTime.textContent = '';
         coverImage.src = '';
+        coverImage.alt = '';
+        return;
+    }
+
+    trackName.textContent = track.name;
+    trackArtist.textContent = track.artist.name;
+    trackTime.textContent = track.nowplaying ? 'Now Playing' : '';
+    
+    // Get the largest available image
+    const largeImage = track.images.find(img => img.size === 'large') || 
+                      track.images.find(img => img.size === 'extralarge') ||
+                      track.images[0];
+
+    if (largeImage) {
+        coverImage.src = largeImage.url;
+        coverImage.alt = `Cover of ${track.name} by ${track.artist.name}`;
+    } else {
+        coverImage.src = '';
+        coverImage.alt = '';
     }
 }
 
-
-fetchLastPlayed();
-setInterval(() => {
-    fetchLastPlayed();
-}, 3000);
+// Keep the font size adjustment function
 function adjustFontSize() {
     const container = document.getElementById('track-info-text');
     const text = document.getElementById('track-title');
     let fontSize = parseInt(window.getComputedStyle(text).fontSize);
 
-    // Reduce font size until the text fits within the container's height
     while (text.scrollHeight > container.offsetHeight && fontSize > 10) {
         fontSize--;
         text.style.fontSize = `${fontSize}px`;
     }
 }
 
-// Run the function when the page loads and when the window is resized
 window.onload = adjustFontSize;
 window.onresize = adjustFontSize;
