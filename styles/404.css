@@ -2,16 +2,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* 100% van de viewporthoogte */
-    margin: 0; /* Verwijder standaard marges van het lichaam */
+    height: 100vh;
+    /* 100% van de viewporthoogte */
+    margin: 0;
+    /* Verwijder standaard marges van het lichaam */
 }
 
 .center-box {
-    width: 300px; /* Pas de breedte van de box aan naar wens */
-    height: 200px; /* Pas de hoogte van de box aan naar wens */
-    text-align: center; /* Centreren van de tekst in de box */
-    padding: 20px; /* Binnenmarge van de box */
+    width: 300px;
+    /* Pas de breedte van de box aan naar wens */
+    height: 200px;
+    /* Pas de hoogte van de box aan naar wens */
+    text-align: center;
+    /* Centreren van de tekst in de box */
+    padding: 20px;
+    /* Binnenmarge van de box */
 }
+
 .center-box h1 {
     font-size: 150px;
     font-family: 'Roboto', sans-serif;
@@ -20,22 +27,32 @@ body {
     transition: transform 0.55s ease-in-out;
     animation: bounce 2s infinite;
 }
+
 @keyframes bounce {
-0%, 20%, 50%, 80%, 100% {
-transform: translateY(0);
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
 }
-40% {
-transform: translateY(-20px);
-}
-60% {
-transform: translateY(-10px);
-}
-}
+
 .center-box p {
     font-family: 'Roboto', sans-serif;
     color: #FFCC66;
     margin: 0;
 }
+
 .center-box a {
     font-family: 'Roboto', sans-serif;
     color: white;

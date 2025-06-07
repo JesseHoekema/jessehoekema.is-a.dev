@@ -88,6 +88,7 @@ body.dark {
     color: #FFCC66;
     font-size: 48px;
     margin: 0px;
+    display: inline-block;
 }
 
 #title {
@@ -474,4 +475,40 @@ svg.light {
     #row {
         gap: 20px;
     }
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    position: relative;
+    animation: 
+        typing 1s steps(20, end) forwards;
+    animation-delay: 0.5s;
+}
+
+.typing::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 1.2em; /* Adjust this value to make cursor taller/shorter */
+    width: 1px;
+    background: var(--main-color);
+    animation: blink .8s infinite;
 }
