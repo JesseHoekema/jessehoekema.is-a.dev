@@ -6,6 +6,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
     const sendconfirm = document.getElementById('sendconfirm');
+    const sendbtn = document.getElementById('send-btn');
     const loader = document.getElementById('loader');
     loader.style.display = "block"
     sendconfirm.style.display = "none"
@@ -15,8 +16,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
       email: email,      // Verkrijg waarde van het invoerveld met id 'email'
       message: message   // Verkrijg waarde van het invoerveld met id 'message'
     };
-
-    console.log('Formuliergegevens:', data);
 
     // Optioneel: Verstuur de gegevens naar een server
     fetch('https://contactmin.jessehoekema.com/api/send', {
@@ -32,6 +31,8 @@ document.getElementById('contact-form').addEventListener('submit', function(even
       }
         sendconfirm.style.display = "block"
         loader.style.display = "none"
+        document.getElementById('contact-form').reset();
+        sendbtn.disable()
       return response.text(); // Of response.json() als je server JSON terugstuurt
     })
     .catch(error => console.error('Fout:', error));
