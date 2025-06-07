@@ -430,6 +430,9 @@ svg.light {
     .about, .skills, .projects {
         padding: 0 15px;
     }
+    .cursor {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -457,6 +460,7 @@ svg.light {
     #des-project {
         font-size: 12px;
     }
+
 }
 
 /* Fix for wider screens */
