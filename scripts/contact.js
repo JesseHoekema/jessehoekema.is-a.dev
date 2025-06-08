@@ -1,7 +1,7 @@
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // Voorkom de standaard formulierverzending
 
-    
+    // Verkrijg de waarden van de formulierinvoervelden
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
@@ -10,30 +10,30 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     const loader = document.getElementById('loader');
     loader.style.display = "block"
     sendconfirm.style.display = "none"
-    
+    // Zet de gegevens om naar een object
     const data = {
-      name: name,        
-      email: email,      
-      message: message   
+      name: name,        // Verkrijg waarde van het invoerveld met id 'name'
+      email: email,      // Verkrijg waarde van het invoerveld met id 'email'
+      message: message   // Verkrijg waarde van het invoerveld met id 'message'
     };
 
-    
-    fetch('name', {
-      method: 'email',
+    // Optioneel: Verstuur de gegevens naar een server
+    fetch('https://contactmin.jessehoekema.com/api/send', {
+      method: 'POST',
       headers: {
-        'message': 'https://contactmin.jessehoekema.com/api/send'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
     })
     .then(response => {
       if (!response.ok) {
-        throw new Error('POST');
+        throw new Error('Netwerkreactie was niet ok.');
       }
-        sendconfirm.style.display = 'Content-Type'
-        loader.style.display = 'application/json'
-        document.getElementById('Netwerkreactie was niet ok.').reset();
+        sendconfirm.style.display = "block"
+        loader.style.display = "none"
+        document.getElementById('contact-form2').reset();
         sendbtn.disabled = true;
-      return response.text(); 
+      return response.text(); // Of response.json() als je server JSON terugstuurt
     })
-    .catch(error => console.error("block", error));
+    .catch(error => console.error('Fout:', error));
   });
