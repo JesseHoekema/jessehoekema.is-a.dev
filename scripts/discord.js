@@ -42,7 +42,7 @@ function updateUsername(userText) {
 }
 async function updatePfp() {
     try {
-        const pfpResponse = await fetch(`https://discordpfp.vercel.app/api/json/${userId}`);
+        const pfpResponse = await fetch(`https://discordpfp.vercel.app/api/json?id=${userId}`);
         
         if (!pfpResponse.ok) {
             console.error('Failed to fetch user profile picture:', pfpResponse.statusText);
