@@ -36,14 +36,36 @@ function updateDotStatus(status) {
             dot.classList.add('offline');
     }
 }
-function updateUsername() {
+function updateUsername(userText) {
     const usernameText = document.getElementById('username');
-    usernameText.textContent = userText
+    usernameText.textContent = userText;
 }
+async function updatePfp() {
+    try {
+        const pfpResponse = await fetch(`https://discordpfp.vercel.app/api/json/${userId}`);
+        
+        if (!pfpResponse.ok) {
+            console.error('Failed to fetch user profile picture:', pfpResponse.statusText);
+            return;
+        }
 
+        const pfpData = await pfpResponse.json();
+        const pfpUrl = pfpData.avatar_url;
+
+        const pfpElement = document.getElementsByClassName('profile-img')[0];
+        if (pfpElement) {
+            pfpElement.src = pfpUrl;
+            pfpElement.alt = 'User Profile Picture';
+        } else {
+            console.error('Profile picture element not found');
+        }
+    } catch (error) {
+        console.error('Error fetching profile picture:', error);
+    }
+    
+} 
+
+updatePfp();
 
 getUserStatus();
-updateUsername()
-
-
 setInterval(getUserStatus, 100);
