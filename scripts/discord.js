@@ -1,4 +1,4 @@
-const userId = '1263110378666065944'; // De gebruikers-ID die je wilt volgen
+const userId = '1263110378666065944'; 
 
 async function getUserStatus() {
     try {
@@ -20,7 +20,7 @@ async function getUserStatus() {
 
 function updateDotStatus(status) {
     const dot = document.getElementById('status-dot');
-    dot.className = 'dot'; // Reset classes
+    dot.className = 'dot'; 
 
     switch (status) {
         case 'online':
@@ -41,9 +41,9 @@ function updateUsername() {
     usernameText.textContent = userText
 }
 
-// Initial call to set the status
+
 getUserStatus();
 updateUsername()
 
-// Refresh status every second
+
 setInterval(getUserStatus, 100);

@@ -1,5 +1,5 @@
-const apiKey = '3a8994ba1c698ea3509fbd153704e4fd';  // Replace with your Last.fm API key
-const username = 'jessehoekema';  // Replace with the Last.fm username you want to track
+const apiKey = '3a8994ba1c698ea3509fbd153704e4fd';  
+const username = 'jessehoekema';  
 const trackName = document.getElementById('track-name');
 const trackArtist = document.getElementById('track-artist');
 const trackTime = document.getElementById('track-time');
@@ -21,8 +21,8 @@ socket.onmessage = (event) => {
             socket.send(JSON.stringify({ op: 1 }));
         }, data.pingInterval);
 
-        socket.send(JSON.stringify({ 
-            op: 2, 
+        socket.send(JSON.stringify({
+            op: 2,
             d: { user: "jessehoekema" }
         }));
     }
@@ -57,11 +57,11 @@ function updateTrackInfo(track) {
     trackName.textContent = track.name;
     trackArtist.textContent = track.artist.name;
     trackTime.textContent = track.nowplaying ? 'Now Playing' : '';
+
     
-    // Get the largest available image
-    const largeImage = track.images.find(img => img.size === 'large') || 
-                      track.images.find(img => img.size === 'extralarge') ||
-                      track.images[0];
+    const largeImage = track.images.find(img => img.size === 'large') ||
+        track.images.find(img => img.size === 'extralarge') ||
+        track.images[0];
 
     if (largeImage) {
         coverImage.src = largeImage.url;
@@ -72,7 +72,7 @@ function updateTrackInfo(track) {
     }
 }
 
-// Keep the font size adjustment function
+
 function adjustFontSize() {
     const container = document.getElementById('track-info-text');
     const text = document.getElementById('track-title');

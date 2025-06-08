@@ -1,3 +1,7 @@
+// Old version of the lastfm stats get method 
+// this system is now replaced with a websocket
+
+
 const apiKey = '3a8994ba1c698ea3509fbd153704e4fd';  // Replace with your Last.fm API key
 const username = 'jessehoekema';  // Replace with the Last.fm username you want to track
 const trackName = document.getElementById('track-name');
@@ -5,7 +9,6 @@ const trackArtist = document.getElementById('track-artist');
 const trackTime = document.getElementById('track-time');
 const coverImage = document.getElementById('cover-image');
 
-// Fetch the last played track using the Last.fm API
 async function fetchLastPlayed() {
     const apiUrl = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`;
 
@@ -45,7 +48,6 @@ function adjustFontSize() {
     const text = document.getElementById('track-title');
     let fontSize = parseInt(window.getComputedStyle(text).fontSize);
 
-    // Reduce font size until the text fits within the container's height
     while (text.scrollHeight > container.offsetHeight && fontSize > 10) {
         fontSize--;
         text.style.fontSize = `${fontSize}px`;
