@@ -17,13 +17,13 @@ const style = document.createElement('style');
 const cursor = document.getElementById('cursor');
 document.head.appendChild(style);
 
-// Function to update the text color based on DarkMode
+
 const updateTextColor = () => {
-    const headers = document.getElementsByTagName('h1'); // Get all h1 elements
+    const headers = document.getElementsByTagName('h1'); 
     for (let header of headers) {
         if (DarkMode) {
             localStorage.setItem('theme', 'dark');
-            header.style.color = '#FFCC66'; // Light text for dark mode
+            header.style.color = '#FFCC66'; 
             cursor.style.backgroundColor = 'var(--main-color)';
             body.style.backgroundColor = '#24221D'
             hellotext.style.color = '#FFF1D4'
@@ -58,7 +58,7 @@ const updateTextColor = () => {
 
         } else {
             localStorage.setItem('theme', 'light');
-            header.style.color = '#000000'; // Dark text for light mode
+            header.style.color = '#000000'; 
             cursor.style.backgroundColor = 'var(--second-color)';
             body.style.backgroundColor = '#FFCC66';
             nametext.style.color = '#5C4E30'
@@ -94,14 +94,14 @@ const updateTextColor = () => {
     }
 };
 
-// Event listener for the SVG click
+
 svg.addEventListener('click', () => {
-    DarkMode = !DarkMode; // Toggle the DarkMode state
-    updateTextColor(); // Update the text color based on the new DarkMode state
+    DarkMode = !DarkMode; 
+    updateTextColor(); 
     console.log("DarkMode is now:", DarkMode);
 });
 
-// Initial color update
+
 
 function donate() {
     kofiWidgetOverlay.draw('jessiflessi', {
@@ -153,7 +153,7 @@ document.addEventListener('mouseleave', () => {
     cursor.style.opacity = '0';
 });
 
-// Show it again when re-entering
+
 document.addEventListener('mouseenter', () => {
     cursor.style.opacity = '1';
 });
