@@ -68,4 +68,3 @@ async function updatePfp() {
 updatePfp();
 
 getUserStatus();
-setInterval(getUserStatus, 100);
