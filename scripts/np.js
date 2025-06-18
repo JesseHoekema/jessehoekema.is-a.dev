@@ -1,4 +1,3 @@
-const apiKey = '3a8994ba1c698ea3509fbd153704e4fd';  
 const username = 'jessehoekema';  
 const trackName = document.getElementById('track-name');
 const trackArtist = document.getElementById('track-artist');
@@ -23,7 +22,7 @@ socket.onmessage = (event) => {
 
         socket.send(JSON.stringify({
             op: 2,
-            d: { user: "jessehoekema" }
+            d: { user: username, type: 'nowplaying' }
         }));
     }
 
