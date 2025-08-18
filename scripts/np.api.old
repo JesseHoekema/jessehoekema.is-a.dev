@@ -2,7 +2,7 @@
 // this system is now replaced with a websocket
 
 
-const apiKey = '3a8994ba1c698ea3509fbd153704e4fd';  // Replace with your Last.fm API key
+const apiKey = '';  // Replace with your Last.fm API key
 const username = 'jessehoekema';  // Replace with the Last.fm username you want to track
 const trackName = document.getElementById('track-name');
 const trackArtist = document.getElementById('track-artist');
