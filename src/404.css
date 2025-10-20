@@ -1,0 +1,70 @@
+:root[data-theme=light] {
+    --bg: rgb(255, 204, 102);
+    --cursor-color: #24221D;
+    --text-main: #24221D;
+}
+
+:root[data-theme=dark] {
+    --bg: rgb(36, 34, 29);
+    --cursor-color: #FFCC66;
+    --text-main: #FFCC66;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    cursor: none;
+    background-color: var(--bg);
+}
+
+.center-box {
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.center-box h1 {
+    font-size: 150px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    transition: transform 0.55s ease-in-out;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-20px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.center-box p {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.center-box a {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0;
+    cursor: none;
+}

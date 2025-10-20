@@ -1,0 +1,149 @@
+@import url('https://fonts.cdnfonts.com/css/outfit?styles=400,600,700');
+@import 'tailwindcss';
+
+:root {
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.5s ease;
+}
+
+:root[data-theme=light] {
+    --bg: rgb(255, 204, 102);
+    --project-background: rgb(17, 12, 3, 0.1);
+    --cursor-color: #24221D;
+}
+
+:root[data-theme=dark] {
+    --bg: rgb(36, 34, 29);
+    --togglebutton: #FFCC66;
+    --profiletext1: rgb(255, 255, 255);
+    --profiletext2: #FFCC66;
+    --selection-bg: rgb(255, 204, 102);
+    --selection-color: #000;
+    --widget: rgb(255, 241, 212, 0.1);
+    --widget-title: #FFCC66;
+    --title-color: #FFCC66;
+    --about-description: #FFF1D4;
+    --project-background: rgb(255, 241, 212, 0.1);
+    --project-des: rgb(255, 255, 255);
+    --send-btn-text: #000000;
+    --send-btn-bg: #FFCC66;
+    --input-bg: rgb(255, 204, 102);
+    --placeholder: #FFF1D4;
+    --kofi-bg: rgb(255, 204, 102);
+    --kofi-text: #000000;
+    --cursor-color: #FFCC66;
+}
+
+body {
+    background-color: var(--bg);
+    transition: all 0.5s ease;
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 5px;
+}
+
+html,
+body,
+* {
+    cursor: none !important;
+}
+
+.title {
+    color: var(--title-color);
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: 700;
+}
+
+::selection {
+    background: var(--selection-bg);
+    color: var(--selection-color);
+}
+
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.proj-title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+}
+
+.project {
+    background-color: var(--project-background);
+    text-align: left;
+    width: 290px;
+    height: 170px;
+    border-radius: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:
+        rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(0, 0, 0, 0.3) 0px 6px 12px -6px;
+}
+
+.project:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(0, 0, 0, 0.3) 0px 15px 19px -6px;
+}
+
+.project .title {
+    padding-top: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+.project .description {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: var(--project-des);
+    line-height: 1.5;
+}
+
+.back {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+
+}
+
+.back button {
+    background: rgba(255, 241, 212, 0.1);
+    border: none;
+    color: white;
+    padding: 7px;
+    border-bottom-right-radius: 7px;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 20px 10px;
+    }
+
+    .proj-title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .projects {
+        gap: 15px;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 100%;
+    }
+}
