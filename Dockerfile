@@ -1,16 +1,42 @@
-FROM node:22-alpine AS builder
+
+FROM node:24-alpine AS builder
+
 WORKDIR /app
-COPY package*.json ./
-RUN pnpm ci
+
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+
+COPY package*.json pnpm-lock.yaml ./
+
+
+RUN pnpm install --frozen-lockfile
+
+
 COPY . .
+
+ENV PROTOCOL_HEADER=x-forwarded-proto
+ENV HOST_HEADER=x-forwarded-host
+
 RUN pnpm run build
+
 RUN pnpm prune --production
 
-FROM node:22-alpine
+FROM node:24-alpine
+
 WORKDIR /app
-COPY --from=builder /app/build build/
-COPY --from=builder /app/node_modules node_modules/
-COPY package.json .
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
 EXPOSE 5173
+
 ENV NODE_ENV=production
-CMD [ "node", "build" ]
+ENV PROTOCOL_HEADER=x-forwarded-proto
+ENV HOST_HEADER=x-forwarded-host
+ENV PORT=5173
+
+CMD ["node", "build"]
