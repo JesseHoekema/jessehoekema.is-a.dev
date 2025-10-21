@@ -1,5 +1,2 @@
 [phases.setup]
-node_version = "22.12"  # or "20.19" which is LTS
-
-[env]
-NIXPACKS_PATH = "/app/node_modules/.bin:${NIXPACKS_PATH:-}"
+nixPkgs = ["nodejs_20"]
