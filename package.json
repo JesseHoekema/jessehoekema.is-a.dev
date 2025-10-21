@@ -31,5 +31,8 @@
 		"svelte-french-toast": "^1.2.0",
 		"svelte-theme": "^1.4.3",
 		"svelte-themes": "^2.0.10"
+	},
+	"engines": {
+  		"node": ">=20.19"
 	}
 }
