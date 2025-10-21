@@ -6,17 +6,6 @@ My personal site made in svelte(kit), typescript, css, html
 
 https://jessehoekema.com
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
 
 ## Developing
 
