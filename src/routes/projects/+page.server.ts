@@ -26,7 +26,8 @@ const SELECTED_REPOS = [
     'ascii-os',
     'microOS',
     'game-console-100',
-    'touchbarfun'
+    'touchbarfun',
+    '1Checkbox'
 ];
 
 async function fetchAllRepos(): Promise<Project[]> {
