@@ -9,10 +9,11 @@ COPY pnpm-lock.yaml* ./
 
 RUN pnpm install --frozen-lockfile || pnpm install
 
+RUN pnpm add -D @sveltejs/adapter-node
+
 COPY . .
 
-ENV PROTOCOL_HEADER=x-forwarded-proto
-ENV HOST_HEADER=x-forwarded-host
+ENV ADAPTER=node
 
 RUN pnpm run build
 
@@ -31,8 +32,6 @@ COPY --from=builder /app/package.json ./package.json
 EXPOSE 5173
 
 ENV NODE_ENV=production
-ENV PROTOCOL_HEADER=x-forwarded-proto
-ENV HOST_HEADER=x-forwarded-host
 ENV PORT=5173
 
 CMD ["node", "build"]
