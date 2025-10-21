@@ -1,6 +1,10 @@
-# sv
+# jessehoekema.is-a.dev
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+[![Tech stack](https://skillicons.dev/icons?i=svelte,ts,css,html)](https://skillicons.dev)
+
+My personal site made in svelte(kit), typescript, css, html
+
+https://jessehoekema.com
 
 ## Creating a project
 
