@@ -1,18 +1,30 @@
-<script>
+<script lang="ts">
     import { goto } from "$app/navigation";
     import "./projects.css";
 
     const { data } = $props();
+
+    function truncateDescription(description: string, maxWords = 33) {
+        const words = description.split(" ");
+        if (words.length <= maxWords) return description;
+        return words.slice(0, maxWords).join(" ") + "...";
+    }
 </script>
 
 <svelte:head>
     <title>Projects - Jesse Hoekema</title>
-    <meta name="title" content="Projects - Jesse Hoekema - Fullstack Developer" />
+    <meta
+        name="title"
+        content="Projects - Jesse Hoekema - Fullstack Developer"
+    />
     <meta
         name="description"
         content="Nothing To Worry About Just My Personal Site"
     />
-    <meta property="og:title" content="Projects - Jesse Hoekema - Fullstack Developer" />
+    <meta
+        property="og:title"
+        content="Projects - Jesse Hoekema - Fullstack Developer"
+    />
     <meta
         property="og:description"
         content="This Is Just My Personal Site :)"
@@ -32,7 +44,7 @@
             <a href={project.link} style="text-decoration: none;">
                 <div class="project">
                     <h1 class="title">{project.title}</h1>
-                    <p class="description">{project.description}</p>
+                    <p class="description">{truncateDescription(project.description)}</p>
                 </div>
             </a>
         {/each}
