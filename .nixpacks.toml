@@ -1,0 +1,5 @@
+[phases.setup]
+node_version = "20.19"
+
+[env]
+NIXPACKS_PATH = "/app/node_modules/.bin:${NIXPACKS_PATH:-}"
