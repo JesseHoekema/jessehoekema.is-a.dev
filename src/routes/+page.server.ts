@@ -23,27 +23,18 @@ export const load: PageServerLoad = async ({ fetch }) => {
         }
 
         if (wakatimeRes.ok) {
-            const wakatimeData = await wakatimeRes.json();
-            const { hours, minutes } = wakatimeData;
-
-            codingSession = hours === 0 && minutes === 0
-                ? 'Not coded today'
-                : `${hours} Hours & ${minutes} Minutes`;
+            const { hours, minutes } = await wakatimeRes.json();
+            codingSession = hours || minutes ? `${hours} Hours & ${minutes} Minutes` : 'Not coded today';
         }
 
         if (discordRes.ok) {
-            const discordData = await discordRes.json();
-            status = discordData.data?.discord_status || 'offline';
-            usernameText = discordData.data?.discord_user?.display_name || 'Unknown User';
+            const data = await discordRes.json();
+            status = data.data?.discord_status || 'offline';
+            usernameText = data.data?.discord_user?.display_name || 'Unknown User';
         }
     } catch (err) {
         console.error('Error loading page data:', err);
     }
 
-    return {
-        track,
-        codingSession,
-        status,
-        usernameText
-    };
+    return { track, codingSession, status, usernameText };
 };
