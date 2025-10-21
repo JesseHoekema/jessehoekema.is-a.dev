@@ -77,8 +77,8 @@
         <div class="project">
             <h1 class="title-project">Peaky Blinders</h1>
             <p class="des-project">
-                I Made The Site For Peaky Blinders<br />
-                Go To <a href="https://pk.edyt.lol/">The Site</a>
+                I made the site for Peaky Blinders<br />
+                Go to <a href="https://pk.edyt.lol/">the site</a>
             </p>
             <img src="assets/tools/pk.svg" class="toolicons" alt="Tool Icons" />
         </div>
@@ -86,9 +86,9 @@
         <div class="project">
             <h1 class="title-project">JHBROWSER</h1>
             <p class="des-project">
-                This Is My Own Browser<br />
-                Its Not Done, Only The Extension<br />
-                You Can Find And Install It
+                This is my own browser<br />
+                Its not done, Only the extension<br />
+                You can find and install it
                 <a
                     href="https://chromewebstore.google.com/detail/jhbrowser-tabs/ofghhehidddjmbpcgkipclkenmdkkacn"
                     >here</a
