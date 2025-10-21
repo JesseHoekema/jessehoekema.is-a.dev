@@ -33,6 +33,6 @@
 		"svelte-themes": "^2.0.10"
 	},
 	"engines": {
-  		"node": ">=20.19"
+  		"node": ">=22.12"
 	}
 }
