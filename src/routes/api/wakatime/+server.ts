@@ -3,7 +3,7 @@ import axios from 'axios';
 import { WAKATIME_API_KEY } from '$env/static/private';
 
 export const GET: RequestHandler = async () => {
-	const apiKey = WAKATIME_API_KEY
+	const apiKey = WAKATIME_API_KEY;
 
 	if (!apiKey) {
 		return new Response(
@@ -21,7 +21,8 @@ export const GET: RequestHandler = async () => {
 			{
 				headers: {
 					Authorization: `Bearer ${apiKey}`
-				}
+				},
+				timeout: 10000 
 			}
 		);
 
@@ -35,9 +36,28 @@ export const GET: RequestHandler = async () => {
 			}
 		});
 	} catch (error) {
-		console.error(error);
-		return new Response(JSON.stringify({ error: 'Failed to fetch Wakatime stats' }), {
-			status: 500,
+		console.error('Wakatime API error:', error);
+		
+		if (axios.isAxiosError(error) && !error.response) {
+			return new Response(JSON.stringify({ 
+				hours: 0, 
+				minutes: 0,
+				message: 'not coded today'
+			}), {
+				status: 200,
+				headers: {
+					'Access-Control-Allow-Origin': '*',
+					'Content-Type': 'application/json'
+				}
+			});
+		}
+		
+		return new Response(JSON.stringify({ 
+			error: 'Failed to fetch Wakatime stats',
+			hours: 0,
+			minutes: 0
+		}), {
+			status: 200,
 			headers: {
 				'Access-Control-Allow-Origin': '*',
 				'Content-Type': 'application/json'
