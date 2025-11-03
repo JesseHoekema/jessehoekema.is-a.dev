@@ -1,17 +1,10 @@
 <script lang="ts">
-	import { SvelteTheme, useTheme } from "svelte-themes";
+	import { SvelteTheme } from "svelte-themes";
 	import { Toaster } from "svelte-french-toast";
 	import Cursor from "$lib/components/Cursor.svelte";
 
 	let { children } = $props();
 
-	const themeStore = localStorage.getItem("theme");
-	const theme = useTheme();
-
-	if (!themeStore) {
-		localStorage.setItem("theme", "dark");
-		theme.theme = "dark";
-	}
 </script>
 
 <svelte:head>
