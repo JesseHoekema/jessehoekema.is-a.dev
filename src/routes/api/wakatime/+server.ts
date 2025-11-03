@@ -22,7 +22,7 @@ export const GET: RequestHandler = async () => {
 				headers: {
 					Authorization: `Bearer ${apiKey}`
 				},
-				timeout: 10000 
+				timeout: 2000 
 			}
 		);
 
