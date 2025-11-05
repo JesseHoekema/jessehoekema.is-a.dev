@@ -1,45 +1,38 @@
-# ---------- BUILD STAGE ----------
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 
-# Werkdirectory
 WORKDIR /app
 
-# PNPM setup
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Package files
-COPY package.json pnpm-lock.yaml* ./
+COPY package*.json ./
+COPY pnpm-lock.yaml* ./
 
-# Install dependencies
-RUN pnpm install --no-frozen-lockfile
+RUN pnpm install --frozen-lockfile || pnpm install
 
-# Copy rest of the project
 COPY . .
 
-# Build SvelteKit (Node adapter)
+ENV PROTOCOL_HEADER=x-forwarded-proto
+ENV HOST_HEADER=x-forwarded-host
+
 RUN pnpm run build
 
-# ---------- PRODUCTION STAGE ----------
-FROM node:20-alpine
+RUN pnpm prune --production
+
+FROM node:24-alpine
 
 WORKDIR /app
 
-# PNPM setup
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
-# Copy build output and node_modules from builder
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
 
-# Expose port
 EXPOSE 5173
 
-# Environment variables
 ENV NODE_ENV=production
-ENV PORT=5173
 ENV PROTOCOL_HEADER=x-forwarded-proto
 ENV HOST_HEADER=x-forwarded-host
+ENV PORT=5173
 
-# Start Node adapter
-CMD ["node", "build/index.js"]
+CMD ["node", "build"]
