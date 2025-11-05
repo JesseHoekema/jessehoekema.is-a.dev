@@ -10,7 +10,7 @@
             <p class="des-project">
                 An app to get all tests that you have<br />
                 in somtoday and learn for them<br />
-                all in one dashboard (in progress)
+                all in one dashboard <a href="https://toetsenbord.app" class="text-blue-500 underline">find it here</a>
             </p>
             <img
                 src="assets/tools/toetsenbord.svg"
