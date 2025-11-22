@@ -26,7 +26,7 @@
     }
 
     onMount(() => {
-        socket = new WebSocket("wss://lastfm.dandandev.xyz");
+        socket = new WebSocket("wss://lastfm.jessehoekema.com");
 
         socket.onopen = () => {
             console.log("Connected to LastFM WebSocket");
