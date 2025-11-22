@@ -7,10 +7,9 @@ My personal site made in svelte(kit), typescript, css, html
 https://jessehoekema.com
 
 ## For me
-
-- vercel only works when you have ```import adapter from '@sveltejs/adapter-auto';``` in the svelte.config.js (coolify will not work)
-
-- for coolify u do: ```import adapter from '@sveltejs/adapter-node';```
+> [!NOTE]
+> - vercel only works when you have ```import adapter from '@sveltejs/adapter-auto';``` in the svelte.config.js (coolify will not work)
+> - for coolify u do: ```import adapter from '@sveltejs/adapter-node';```
 
 
 ## Developing
