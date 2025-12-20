@@ -99,10 +99,10 @@
 						<img
 							id="cover-image"
 							src={track
-								? track.images?.find(img => img.size === 'large')?.url || 'assets/default_cover.png'
+								? track.image || 'assets/default_cover.png'
 								: 'assets/default_cover.png'}
 							alt={track
-								? `Cover of ${track.name} by ${track.artist.name}`
+								? `Cover of ${track.name} by ${track.artist}`
 								: 'Album Cover'}
 						/>
 					</div>
@@ -116,7 +116,7 @@
 						</p>
 						<p id="track-artist" style="margin-top: 0px;">
 							{#if track}
-								{track.artist.name}
+								{track.artist}
 							{:else}
 								Artist Name
 							{/if}

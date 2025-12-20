@@ -30,34 +30,33 @@
 
         socket.onopen = () => {
             console.log("Connected to LastFM WebSocket");
+            
+            socket.send(JSON.stringify({
+                type: "set_username",
+                username: username
+            }));
         };
 
         socket.onmessage = (event) => {
             const parsed = JSON.parse(event.data);
-            const opcode = parsed.op;
-            const data = parsed.d;
+            const messageType = parsed.type;
+            const data = parsed.data;
 
-            if (opcode === 0) {
-                // Keep-alive ping
-                setInterval(() => {
-                    socket.send(JSON.stringify({ op: 1 }));
-                }, data.pingInterval);
-
-                socket.send(
-                    JSON.stringify({
-                        op: 2,
-                        d: { user: username, type: "nowplaying" },
-                    }),
-                );
+            if (messageType === "connected") {
+                console.log("WebSocket connected:", parsed.message);
             }
 
-            if (opcode === 2) {
-                if (data.error) {
-                    console.error("Error:", data.error);
-                    updateTrackInfo(null);
-                    return;
-                }
-                updateTrackInfo(data.track);
+            if (messageType === "username_set") {
+                console.log("Username set:", parsed.username);
+            }
+
+            if (messageType === "track_update") {
+                updateTrackInfo(data);
+            }
+
+            if (messageType === "error") {
+                console.error("WebSocket Error:", parsed.message);
+                updateTrackInfo(null);
             }
         };
 

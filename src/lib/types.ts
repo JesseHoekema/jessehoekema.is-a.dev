@@ -1,15 +1,8 @@
-export interface TrackImage {
-    size: string;
-    url: string;
-}
-
-export interface TrackArtist {
-    name: string;
-}
-
 export interface Track {
     name: string;
-    artist: TrackArtist;
+    artist: string;
+    album: string;
+    image: string;
+    url: string;
     nowplaying?: boolean;
-    images: TrackImage[];
 }

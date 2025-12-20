@@ -12,14 +12,14 @@ export const load: PageServerLoad = async ({ fetch }) => {
 
     try {
         const [lastfmRes, wakatimeRes, discordRes] = await Promise.all([
-            fetch(`https://lastfm.jessehoekema.com/api/nowplaying/${USERNAME}`),
+            fetch(`https://lastfm.jessehoekema.com/api/${USERNAME}`),
             fetch('/api/wakatime'),
             fetch(`https://api.lanyard.rest/v1/users/${userId}`)
         ]);
 
         if (lastfmRes.ok) {
-            const data = await lastfmRes.json();
-            track = data.track ?? null;
+            const response = await lastfmRes.json();
+            track = response.success ? response.data : null;
         }
 
         if (wakatimeRes.ok) {
