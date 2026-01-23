@@ -30,7 +30,7 @@
 </svelte:head>
 
 <Toaster />
-<SvelteTheme>
+<SvelteTheme enableSystem={false} defaultTheme="dark">
 	<Cursor />
 	{@render children()}
 </SvelteTheme>
