@@ -5,7 +5,16 @@
 </script>
 
 <button class="bmc-btn" on:click={openBMC} aria-label="Buy me a coffee">
-  <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="" />
+  <img
+    class="bmc-logo bmc-logo-dark"
+    src="/assets/bmc-new-btn-logo-dark.svg"
+    alt="Buy me a coffee logo"
+  />
+  <img
+    class="bmc-logo bmc-logo-light"
+    src="/assets/bmc-new-btn-logo-light.svg"
+    alt="Buy me a coffee logo"
+  />
   <span>Donate</span>
 </button>
 
@@ -37,8 +46,16 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   }
 
-  .bmc-btn img {
+  .bmc-logo {
     width: 24px;
     height: 24px;
+  }
+
+  :global(:root[data-theme='dark']) .bmc-logo-light {
+    display: none;
+  }
+
+  :global(:root[data-theme='light']) .bmc-logo-dark {
+    display: none;
   }
 </style>
