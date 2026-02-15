@@ -1,6 +1,6 @@
 <script lang="ts">
   function openBMC() {
-    window.open('https://www.buymeacoffee.com/jessehoekema', '_blank');
+    window.open("https://www.buymeacoffee.com/jessehoekema", "_blank");
   }
 </script>
 
@@ -19,7 +19,7 @@
 </button>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
   .bmc-btn {
     position: fixed;
     left: 18px;
@@ -35,10 +35,14 @@
     border-radius: 100px;
     font-size: 18px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow:
+      rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(0, 0, 0, 0.3) 0px 6px 12px -6px;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
     font-weight: bold;
-    font-family: 'Nunito', 'Quicksand', sans-serif;
+    font-family: "Nunito", "Quicksand", sans-serif;
   }
 
   .bmc-btn:hover {
@@ -51,11 +55,11 @@
     height: 24px;
   }
 
-  :global(:root[data-theme='dark']) .bmc-logo-light {
+  :global(:root[data-theme="dark"]) .bmc-logo-light {
     display: none;
   }
 
-  :global(:root[data-theme='light']) .bmc-logo-dark {
+  :global(:root[data-theme="light"]) .bmc-logo-dark {
     display: none;
   }
 </style>
